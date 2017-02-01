@@ -1,0 +1,32 @@
+<%= form_for(condition) do |f| %>
+  <% if condition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(condition.errors.count, "error") %> prohibited this condition from being saved:</h2>
+
+      <ul>
+      <% condition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :solucion %>
+    <%= f.text_field :solucion %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

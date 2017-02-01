@@ -1,0 +1,2 @@
+module TipoEmpresasHelper
+end

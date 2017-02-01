@@ -1,15 +1,14 @@
 $(document).ready(function(){
+  // Opens the sidebar menu
+$("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+});
+
   $("#menu-close").click(function(e) {
       e.preventDefault();
       $("#sidebar-wrapper").toggleClass("active");
   });
-
-  // Opens the sidebar menu
-  $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#sidebar-wrapper").toggleClass("active");
-  });
-
   // Scrolls to the selected menu item on the page
   $(function() {
       $('a[href*=#]:not([href=#])').click(function() {

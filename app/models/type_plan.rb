@@ -1,0 +1,2 @@
+class TypePlan < ApplicationRecord
+end

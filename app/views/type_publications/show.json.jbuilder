@@ -1,0 +1,1 @@
+json.partial! "type_publications/type_publication", type_publication: @type_publication

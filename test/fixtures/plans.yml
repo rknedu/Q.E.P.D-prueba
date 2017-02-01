@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  codigo: 1
+  precio: 1
+  publication: one
+  servicio: one
+  type_plan: one
+  tipo_cliente: one
+
+two:
+  nombre: MyString
+  codigo: 1
+  precio: 1
+  publication: two
+  servicio: two
+  type_plan: two
+  tipo_cliente: two

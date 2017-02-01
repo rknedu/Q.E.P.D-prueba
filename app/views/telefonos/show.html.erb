@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @telefono.numero %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @telefono.empresa %>
+</p>
+
+<%= link_to 'Edit', edit_telefono_path(@telefono) %> |
+<%= link_to 'Back', telefonos_path %>

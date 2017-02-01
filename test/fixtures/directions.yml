@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calle: MyString
+  numero: 1
+  sector: MyString
+  empresa: one
+  comuna: one
+
+two:
+  calle: MyString
+  numero: 1
+  sector: MyString
+  empresa: two
+  comuna: two

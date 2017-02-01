@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @plan.nombre %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @plan.codigo %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @plan.precio %>
+</p>
+
+<p>
+  <strong>Publication:</strong>
+  <%= @plan.publication %>
+</p>
+
+<p>
+  <strong>Servicio:</strong>
+  <%= @plan.servicio %>
+</p>
+
+<p>
+  <strong>Type plan:</strong>
+  <%= @plan.type_plan %>
+</p>
+
+<p>
+  <strong>Tipo cliente:</strong>
+  <%= @plan.tipo_cliente %>
+</p>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

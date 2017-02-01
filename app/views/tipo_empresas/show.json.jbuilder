@@ -1,0 +1,1 @@
+json.partial! "tipo_empresas/tipo_empresa", tipo_empresa: @tipo_empresa
