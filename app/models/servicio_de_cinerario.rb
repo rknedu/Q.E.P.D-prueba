@@ -1,0 +1,2 @@
+class ServicioDeCinerario < ApplicationRecord
+end

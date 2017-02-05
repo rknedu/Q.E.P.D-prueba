@@ -1,0 +1,2 @@
+json.extract! velatorio, :id, :tramites_defuncion, :asesor_a_domicilio, :sala_de_velatorio, :cirios, :portacirios, :cruz, :flores_en_canasto, :flores_cubre_urna, :integer, :libro_de_condolencias, :parroco, :coro, :aviso_prensa, :tarjeta_agradecimiento, :cafeteria, :created_at, :updated_at
+json.url velatorio_url(velatorio, format: :json)

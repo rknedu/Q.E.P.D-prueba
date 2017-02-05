@@ -1,0 +1,1 @@
+json.partial! "urnas/urna", urna: @urna

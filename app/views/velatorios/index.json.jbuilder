@@ -1,0 +1,1 @@
+json.array! @velatorios, partial: 'velatorios/velatorio', as: :velatorio

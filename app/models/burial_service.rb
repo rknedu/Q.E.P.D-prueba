@@ -1,0 +1,2 @@
+class BurialService < ApplicationRecord
+end

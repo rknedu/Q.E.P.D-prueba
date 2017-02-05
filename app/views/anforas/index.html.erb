@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Anforas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Anfora y cobre</th>
+      <th>Anfora cobre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anforas.each do |anfora| %>
+      <tr>
+        <td><%= anfora.anfora_y_cobre %></td>
+        <td><%= anfora.anfora_cobre %></td>
+        <td><%= link_to 'Show', anfora %></td>
+        <td><%= link_to 'Edit', edit_anfora_path(anfora) %></td>
+        <td><%= link_to 'Destroy', anfora, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anfora', new_anfora_path %>

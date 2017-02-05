@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
+
   # GET /plans
   # GET /plans.json
   def index
@@ -15,6 +16,33 @@ class PlansController < ApplicationController
   # GET /plans/new
   def new
     @plan = Plan.new
+    @type_plans = TypePlan.all 
+    @tipo_clientes = TipoCliente.all
+    @empresas = Empresa.all
+    @conditions = Condition.all
+    @conditions = Condition.new
+    @formas_de_pagos = FormasDePago.all
+    @components = Component.all
+    @urnas = Urna.all
+    @urnas = Urna.new
+    @velatorios = Velatorio.all
+    @velatorios = Velatorio.new
+    @traslados = Traslado.all
+    @traslados = Traslado.new
+    @servicio_de_cinerarios = ServicioDeCinerario.all
+    @servicio_de_cinerarios = ServicioDeCinerario.new
+    @anforas = Anfora.all
+    @anforas = Anfora.new
+    @burial_services = BurialService.all
+    @burial_services = BurialService.new
+    @espacios = Espacio.all
+    @espacios = Espacio.new
+    @constructions = Construction.all
+    @constructions = Construction.new
+    @locations = Location.all
+    @locations = Location.new
+    @supports = Support.all
+    @supports = Support.new
   end
 
   # GET /plans/1/edit

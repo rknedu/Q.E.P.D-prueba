@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :conditions
+  resources :formas_de_pagos
+  resources :components
+  resources :constructions
+  resources :locations
+  resources :supports
+  resources :espacios
+  resources :burial_services
+  resources :anforas
+  resources :servicio_de_cinerarios
+  resources :traslados
+  resources :velatorios
+  resources :urnas
   resources :directions
   resources :plans
   resources :conditions

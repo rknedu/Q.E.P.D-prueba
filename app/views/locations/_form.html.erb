@@ -1,0 +1,26 @@
+<%= form_for :location do |f| %>
+
+
+  <div class="container">
+    <form role="form">
+      <div class="form-group">
+        <label for="lugar">Lugar:</label>
+        <input type="text" class="form-control" id="lugar"
+               placeholder="Lugar:">
+      </div>
+      <div class="form-group">
+        <label for="acceso_vehicular">Acceso Vehicular:</label>
+        <input type="text" class="form-control" id="acceso_vehicular"
+               placeholder="Acceso Vehicular:">
+      </div>
+      <div class="form-group">
+        <label for="nombre_sector">Nombre Sector:</label>
+        <input type="text" class="form-control" id="nombre_sector"
+               placeholder="Nombre Sector:">
+      </div>
+      <button type="submit" class="btn btn-default">Crear Urna</button>
+    </form>
+  </div>
+
+
+<% end %>

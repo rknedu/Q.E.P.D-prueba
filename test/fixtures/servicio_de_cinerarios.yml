@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  capilla: MyString
+  sala_de_velatorio: MyString
+  podium: MyString
+  liturgia-responso: MyString
+  amplificacion: MyString
+  diacono: MyString
+  coro: 1
+  cafeteria: MyString
+  ceremonia_entre_cenizas: MyString
+  anfora_incluida: MyString
+
+two:
+  capilla: MyString
+  sala_de_velatorio: MyString
+  podium: MyString
+  liturgia-responso: MyString
+  amplificacion: MyString
+  diacono: MyString
+  coro: 1
+  cafeteria: MyString
+  ceremonia_entre_cenizas: MyString
+  anfora_incluida: MyString

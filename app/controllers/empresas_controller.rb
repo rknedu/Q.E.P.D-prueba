@@ -15,6 +15,7 @@ class EmpresasController < ApplicationController
   # GET /empresas/new
   def new
     @empresa = Empresa.new
+    @tipo_empresas = TipoEmpresa.all
   end
 
   # GET /empresas/1/edit

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @urna.modelo %>
+</p>
+
+<p>
+  <strong>Medida:</strong>
+  <%= @urna.medida %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @urna.material %>
+</p>
+
+<p>
+  <strong>Terminacion:</strong>
+  <%= @urna.terminacion %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @urna.color %>
+</p>
+
+<%= link_to 'Edit', edit_urna_path(@urna) %> |
+<%= link_to 'Back', urnas_path %>

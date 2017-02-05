@@ -1,0 +1,2 @@
+class Anfora < ApplicationRecord
+end

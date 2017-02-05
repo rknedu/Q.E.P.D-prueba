@@ -1,0 +1,1 @@
+json.partial! "burial_services/burial_service", burial_service: @burial_service

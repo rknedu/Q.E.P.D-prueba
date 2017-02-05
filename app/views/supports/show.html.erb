@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cobro mantencion:</strong>
+  <%= @support.cobro_mantencion %>
+</p>
+
+<p>
+  <strong>Tiempo cobro:</strong>
+  <%= @support.tiempo_cobro %>
+</p>
+
+<%= link_to 'Edit', edit_support_path(@support) %> |
+<%= link_to 'Back', supports_path %>

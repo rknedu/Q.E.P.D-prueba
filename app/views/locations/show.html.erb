@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @location.lugar %>
+</p>
+
+<p>
+  <strong>Acceso vehicular:</strong>
+  <%= @location.acceso_vehicular %>
+</p>
+
+<p>
+  <strong>Nombre sector:</strong>
+  <%= @location.nombre_sector %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

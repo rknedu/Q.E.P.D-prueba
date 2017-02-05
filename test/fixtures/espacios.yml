@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  urna_adulto: 1
+  urna_parvulo: 1
+  reduccion: 1
+  Anfora: 1
+
+two:
+  urna_adulto: 1
+  urna_parvulo: 1
+  reduccion: 1
+  Anfora: 1

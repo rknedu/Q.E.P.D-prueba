@@ -1,0 +1,1 @@
+json.array! @burial_services, partial: 'burial_services/burial_service', as: :burial_service

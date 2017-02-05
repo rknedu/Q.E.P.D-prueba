@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Capilla:</strong>
+  <%= @burial_service.capilla %>
+</p>
+
+<p>
+  <strong>Sala de velatorio:</strong>
+  <%= @burial_service.sala_de_velatorio %>
+</p>
+
+<p>
+  <strong>Liturgia-responso:</strong>
+  <%= @burial_service.liturgia %>
+</p>
+
+<p>
+  <strong>Toldo:</strong>
+  <%= @burial_service.toldo %>
+</p>
+
+<p>
+  <strong>Silla:</strong>
+  <%= @burial_service.silla %>
+</p>
+
+<p>
+  <strong>Amplificacion:</strong>
+  <%= @burial_service.amplificacion %>
+</p>
+
+<p>
+  <strong>Diacono:</strong>
+  <%= @burial_service.diacono %>
+</p>
+
+<p>
+  <strong>Coro:</strong>
+  <%= @burial_service.coro %>
+</p>
+
+<p>
+  <strong>Cafeteria:</strong>
+  <%= @burial_service.cafeteria %>
+</p>
+
+<%= link_to 'Edit', edit_burial_service_path(@burial_service) %> |
+<%= link_to 'Back', burial_services_path %>

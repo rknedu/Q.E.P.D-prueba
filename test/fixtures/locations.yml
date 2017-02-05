@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lugar: MyString
+  acceso_vehicular: MyString
+  nombre_sector: MyString
+
+two:
+  lugar: MyString
+  acceso_vehicular: MyString
+  nombre_sector: MyString

@@ -1,0 +1,1 @@
+json.array! @servicio_de_cinerarios, partial: 'servicio_de_cinerarios/servicio_de_cinerario', as: :servicio_de_cinerario

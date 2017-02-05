@@ -17,7 +17,7 @@ class ConditionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create condition" do
     assert_difference('Condition.count') do
-      post conditions_url, params: { condition: { descripcion: @condition.descripcion, nombre: @condition.nombre, solucion: @condition.solucion } }
+      post conditions_url, params: { condition: { acepta_seguro_deceso: @condition.acepta_seguro_deceso, compra_anticipada: @condition.compra_anticipada, convenio: @condition.convenio, descuento_servicio_sepultacion: @condition.descuento_servicio_sepultacion, formas_de_pago_id: @condition.formas_de_pago_id, pago_a_plazo: @condition.pago_a_plazo, pensiones: @condition.pensiones, plan_id: @condition.plan_id, seguro_cesantia: @condition.seguro_cesantia, seguro_de_degravamen: @condition.seguro_de_degravamen, titulo_de_dominio: @condition.titulo_de_dominio } }
     end
 
     assert_redirected_to condition_url(Condition.last)
@@ -34,7 +34,7 @@ class ConditionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update condition" do
-    patch condition_url(@condition), params: { condition: { descripcion: @condition.descripcion, nombre: @condition.nombre, solucion: @condition.solucion } }
+    patch condition_url(@condition), params: { condition: { acepta_seguro_deceso: @condition.acepta_seguro_deceso, compra_anticipada: @condition.compra_anticipada, convenio: @condition.convenio, descuento_servicio_sepultacion: @condition.descuento_servicio_sepultacion, formas_de_pago_id: @condition.formas_de_pago_id, pago_a_plazo: @condition.pago_a_plazo, pensiones: @condition.pensiones, plan_id: @condition.plan_id, seguro_cesantia: @condition.seguro_cesantia, seguro_de_degravamen: @condition.seguro_de_degravamen, titulo_de_dominio: @condition.titulo_de_dominio } }
     assert_redirected_to condition_url(@condition)
   end
 

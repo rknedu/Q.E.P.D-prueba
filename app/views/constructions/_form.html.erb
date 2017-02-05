@@ -1,0 +1,30 @@
+<%= form_for :construction do |f| %>
+  
+
+  <div class="container">
+    <form role="form">
+      <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <input type="text" class="form-control" id="tipo"
+               placeholder="Tipo:">
+      </div>
+      <div class="form-group">
+        <label for="material">Material:</label>
+        <input type="text" class="form-control" id="material"
+               placeholder="Material:">
+      </div>
+      <div class="form-group">
+        <label for="terminacion">Terminación:</label>
+        <input type="text" class="form-control" id="terminacion"
+               placeholder="Terminación:">
+      </div>
+      <div class="form-group">
+        <label for="incluye_grabado">Incluye Grabado:</label>
+        <input type="text" class="form-control" id="incluye_grabado"
+               placeholder="Incluye Grabado:">
+      </div>
+      <button type="submit" class="btn btn-default">Crear Urna</button>
+    </form>
+  </div>
+
+<% end %>

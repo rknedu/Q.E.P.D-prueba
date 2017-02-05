@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @construction.tipo %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @construction.material %>
+</p>
+
+<p>
+  <strong>Terminacion:</strong>
+  <%= @construction.terminacion %>
+</p>
+
+<p>
+  <strong>Incluye grabado:</strong>
+  <%= @construction.incluye_grabado %>
+</p>
+
+<%= link_to 'Edit', edit_construction_path(@construction) %> |
+<%= link_to 'Back', constructions_path %>

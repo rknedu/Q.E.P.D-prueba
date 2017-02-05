@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Espacios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Urna adulto</th>
+      <th>Urna parvulo</th>
+      <th>Reduccion</th>
+      <th>Anfora</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @espacios.each do |espacio| %>
+      <tr>
+        <td><%= espacio.urna_adulto %></td>
+        <td><%= espacio.urna_parvulo %></td>
+        <td><%= espacio.reduccion %></td>
+        <td><%= espacio.Anfora %></td>
+        <td><%= link_to 'Show', espacio %></td>
+        <td><%= link_to 'Edit', edit_espacio_path(espacio) %></td>
+        <td><%= link_to 'Destroy', espacio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Espacio', new_espacio_path %>

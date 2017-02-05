@@ -11,42 +11,93 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %>
-    <%= f.text_field :nombre %>
-  </div>
+  <form role="form">
+    <div class="form-group">
+    <label>Nombre Funeraria:</label>
+    <%= collection_select(:plan, :empresa_id, Empresa.all, :id, :nombre, prompt: true) %>
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre Funeraria:</label>
+      <input type="text" class="form-control" id="nombre"
+             placeholder="Nombre Funeraria:">
+    </div>
+    <div class="form-group">
+    <label>Tipo de Plan:</label>
+    <%= collection_select(:plan, :type_plan_id, TypePlan.all, :id, :nombre, prompt: true) %>
+    </div>
+    <div class="form-group">
+    <label>Tipo de Cliente:</label>
+    <%= collection_select(:plan, :tipo_cliente_id, TipoCliente.all, :id, :nombre, prompt: true) %>
+    </div>
+    <div class="form-group">
+      <label for="codigo">SKU:</label>
+      <input type="text" class="form-control" id="codigo" 
+             placeholder="SKU:">
+    </div>
+        <div class="form-group">
+      <label for="publication_id">Publication:</label>
+      <input type="text" class="form-control" id="publication_id"
+             placeholder="Publication:">
+    </div>
+    <div class="form-group">
+      <label for="empresa_id">Empresa:</label>
+      <input type="text" class="form-control" id="empresa_id"
+             placeholder="Empresa:">
+    </div>
+    <div class="form-group">
+      <label for="servicio_id">Servicios:</label>
+      <input type="text" class="form-control" id="servicio_id"
+             placeholder="Servicios:">
+    </div>
+    <div class="container panel panel-primary">
+    <label>Urna:</label>
+      <%= render 'urnas/form', urna: @urnas %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Velatorio:</label>
+      <%= render 'velatorios/form', velatorio: @velatorios %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Traslado:</label>
+      <%= render 'traslados/form', traslado: @traslados %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Servicio de cinerario:</label>
+      <%= render 'servicio_de_cinerarios/form', servicio_de_cinerario: @servicio_de_cinerarios %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Anfora:</label>
+      <%= render 'anforas/form', anfora: @anforas %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Servicio de Sepultación:</label>
+      <%= render 'burial_services/form', burial_service: @burial_services %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Espacios:</label>
+      <%= render 'espacios/form', espacio: @espacios %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Construcción:</label>
+      <%= render 'constructions/form', construction: @constructions %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Ubicación:</label>
+      <%= render 'locations/form', location: @locations %>
+    </div>
+    <div class="container panel panel-primary">
+    <label>Mantención:</label>
+      <%= render 'supports/form', support: @supports %>
+    </div>
 
-  <div class="field">
-    <%= f.label :codigo %>
-    <%= f.number_field :codigo %>
-  </div>
+    <div class="container panel panel-primary">
+    <label>Condiciones:</label>
+      <%= render 'conditions/form', condition: @conditions %>
+    </div>
+    
+      
+    
+    <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
 
-  <div class="field">
-    <%= f.label :precio %>
-    <%= f.number_field :precio %>
-  </div>
-
-  <div class="field">
-    <%= f.label :publication_id %>
-    <%= f.text_field :publication_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :servicio_id %>
-    <%= f.text_field :servicio_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :type_plan_id %>
-    <%= f.text_field :type_plan_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tipo_cliente_id %>
-    <%= f.text_field :tipo_cliente_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

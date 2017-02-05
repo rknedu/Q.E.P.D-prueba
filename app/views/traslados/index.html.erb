@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Traslados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Carroza de instalacion</th>
+      <th>Carroza funeral</th>
+      <th>Carroza para flores</th>
+      <th>Vehiculo acompanamiento</th>
+      <th>Capacidad pasajeros</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @traslados.each do |traslado| %>
+      <tr>
+        <td><%= traslado.carroza_de_instalacion %></td>
+        <td><%= traslado.carroza_funeral %></td>
+        <td><%= traslado.carroza_para_flores %></td>
+        <td><%= traslado.vehiculo_acompanamiento %></td>
+        <td><%= traslado.capacidad_pasajeros %></td>
+        <td><%= link_to 'Show', traslado %></td>
+        <td><%= link_to 'Edit', edit_traslado_path(traslado) %></td>
+        <td><%= link_to 'Destroy', traslado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Traslado', new_traslado_path %>

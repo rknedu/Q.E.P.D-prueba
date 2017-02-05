@@ -1,0 +1,2 @@
+class Urna < ApplicationRecord
+end

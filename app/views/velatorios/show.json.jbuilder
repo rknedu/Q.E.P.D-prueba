@@ -1,0 +1,1 @@
+json.partial! "velatorios/velatorio", velatorio: @velatorio

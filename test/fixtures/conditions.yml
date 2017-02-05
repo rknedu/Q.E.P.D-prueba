@@ -1,11 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  descripcion: MyString
-  solucion: MyString
+  formas_de_pago: one
+  pago_a_plazo: MyString
+  compra_anticipada: 
+  titulo_de_dominio: MyString
+  acepta_seguro_deceso: MyString
+  seguro_de_degravamen: MyString
+  seguro_cesantia: MyString
+  convenio: MyString
+  descuento_servicio_sepultacion: MyString
+  pensiones: MyString
+  plan: one
 
 two:
-  nombre: MyString
-  descripcion: MyString
-  solucion: MyString
+  formas_de_pago: two
+  pago_a_plazo: MyString
+  compra_anticipada: 
+  titulo_de_dominio: MyString
+  acepta_seguro_deceso: MyString
+  seguro_de_degravamen: MyString
+  seguro_cesantia: MyString
+  convenio: MyString
+  descuento_servicio_sepultacion: MyString
+  pensiones: MyString
+  plan: two

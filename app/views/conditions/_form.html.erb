@@ -1,29 +1,69 @@
-<%= form_for(condition) do |f| %>
-  <% if condition.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(condition.errors.count, "error") %> prohibited this condition from being saved:</h2>
+<%= form_for :condition do |f| %>
 
-      <ul>
-      <% condition.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+
+  <div class="form-group">
+    <label>Tipo de Plan:</label>
+    <%= collection_select(:condition, :formas_de_pago_id, FormasDePago.all, :id, :nombre, prompt: true) %>
+  </div>
+
+  <div class="form-group">
+      <label for="pago_a_plazo">Pago a Plazo:</label>
+      <input type="text" class="form-control" id="pago_a_plazo"
+             placeholder="Pago a plazo:">
+  </div>
+
+  <div class="form-group">
+      <label for="compra_anticipada">Compra anticipada:</label>
+      <input type="text" class="form-control" id="compra_anticipada"
+             placeholder="Compra anticipada:">
+  </div>
+
+  <div class="form-group">
+      <label for="titulo_de_dominio">Titulo de Dominio:</label>
+      <input type="text" class="form-control" id="titulo_de_dominio"
+             placeholder="Titulo de Dominio:">
+  </div>
+
+  <div class="form-group">
+      <label for="acepta_seguro_deceso">Acepta seguro deceso:</label>
+      <input type="text" class="form-control" id="acepta_seguro_deceso"
+             placeholder="Acepta seguro deceso:">
+  </div>
+
+  <div class="form-group">
+      <label for="seguro_de_degravamen">Seguro de Degravamen:</label>
+      <input type="text" class="form-control" id="seguro_de_degravamen"
+             placeholder="Seguro de Degravamen:">
+  </div>
+
+  <div class="form-group">
+      <label for="seguro_cesantia">Seguro de Cesantía:</label>
+      <input type="text" class="form-control" id="seguro_cesantia"
+             placeholder="Seguro de Cesantía:">
+  </div>
+
+  <div class="form-group">
+      <label for="convenio">Convenio:</label>
+      <input type="text" class="form-control" id="convenio"
+             placeholder="Convenio:">
+  </div>
+
+  <div class="form-group">
+      <label for="descuento_servicio_sepultacion">Descuento de Servicio:</label>
+      <input type="number" class="form-control" id="descuento_servicio_sepultacion"
+             placeholder="Descuento de Servicio de Sepultación:">
+  </div>
+
+  <div class="form-group">
+      <label for="pensiones">Pensiones:</label>
+      <input type="text" class="form-control" id="pensiones"
+             placeholder="Pensiones:">
     </div>
-  <% end %>
 
   <div class="field">
-    <%= f.label :nombre %>
-    <%= f.text_field :nombre %>
-  </div>
-
-  <div class="field">
-    <%= f.label :descripcion %>
-    <%= f.text_field :descripcion %>
-  </div>
-
-  <div class="field">
-    <%= f.label :solucion %>
-    <%= f.text_field :solucion %>
+    <%= f.label :plan_id %>
+    <%= f.text_field :plan_id %>
   </div>
 
   <div class="actions">

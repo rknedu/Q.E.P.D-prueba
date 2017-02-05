@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Carroza de instalacion:</strong>
+  <%= @traslado.carroza_de_instalacion %>
+</p>
+
+<p>
+  <strong>Carroza funeral:</strong>
+  <%= @traslado.carroza_funeral %>
+</p>
+
+<p>
+  <strong>Carroza para flores:</strong>
+  <%= @traslado.carroza_para_flores %>
+</p>
+
+<p>
+  <strong>Vehiculo acompanamiento:</strong>
+  <%= @traslado.vehiculo_acompanamiento %>
+</p>
+
+<p>
+  <strong>Capacidad pasajeros:</strong>
+  <%= @traslado.capacidad_pasajeros %>
+</p>
+
+<%= link_to 'Edit', edit_traslado_path(@traslado) %> |
+<%= link_to 'Back', traslados_path %>

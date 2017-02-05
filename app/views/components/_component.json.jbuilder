@@ -1,0 +1,2 @@
+json.extract! component, :id, :urna_id, :velatorio_id, :traslado_id, :servicio_de_cinerario_id, :anfora_id, :burial_service_id, :espacio_id, :construction_id, :location_id, :support_id, :plan_id, :created_at, :updated_at
+json.url component_url(component, format: :json)

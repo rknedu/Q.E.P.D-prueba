@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Urnas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Medida</th>
+      <th>Material</th>
+      <th>Terminacion</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urnas.each do |urna| %>
+      <tr>
+        <td><%= urna.modelo %></td>
+        <td><%= urna.medida %></td>
+        <td><%= urna.material %></td>
+        <td><%= urna.terminacion %></td>
+        <td><%= urna.color %></td>
+        <td><%= link_to 'Show', urna %></td>
+        <td><%= link_to 'Edit', edit_urna_path(urna) %></td>
+        <td><%= link_to 'Destroy', urna, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Urna', new_urna_path %>

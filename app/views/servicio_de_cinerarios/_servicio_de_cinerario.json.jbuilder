@@ -1,0 +1,2 @@
+json.extract! servicio_de_cinerario, :id, :capilla, :sala_de_velatorio, :podium, :liturgia, :amplificacion, :diacono, :coro, :cafeteria, :ceremonia_entre_cenizas, :anfora_incluida, :created_at, :updated_at
+json.url servicio_de_cinerario_url(servicio_de_cinerario, format: :json)

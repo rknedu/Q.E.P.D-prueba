@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Constructions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Material</th>
+      <th>Terminacion</th>
+      <th>Incluye grabado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @constructions.each do |construction| %>
+      <tr>
+        <td><%= construction.tipo %></td>
+        <td><%= construction.material %></td>
+        <td><%= construction.terminacion %></td>
+        <td><%= construction.incluye_grabado %></td>
+        <td><%= link_to 'Show', construction %></td>
+        <td><%= link_to 'Edit', edit_construction_path(construction) %></td>
+        <td><%= link_to 'Destroy', construction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Construction', new_construction_path %>

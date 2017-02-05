@@ -1,0 +1,30 @@
+<%= form_for :espacio do |f| %>
+
+
+  <div class="container">
+    <form role="form">
+      <div class="form-group">
+        <label for="urna_adulto">Urna Adulto:</label>
+        <input type="number" class="form-control" id="urna_adulto"
+               placeholder="Urna Adulto:">
+      </div>
+      <div class="form-group">
+        <label for="urna_parvulo">Urna Parvulo:</label>
+        <input type="number" class="form-control" id="urna_parvulo"
+               placeholder="Urna Parvulo:">
+      </div>
+      <div class="form-group">
+        <label for="reduccion">Reducción:</label>
+        <input type="number" class="form-control" id="reduccion"
+               placeholder="Reducción:">
+      </div>
+      <div class="form-group">
+        <label for="Anfora">Anfora:</label>
+        <input type="number" class="form-control" id="Anfora"
+               placeholder="Anfora:">
+      </div>
+      <button type="submit" class="btn btn-default">Crear Urna</button>
+    </form>
+  </div>
+
+<% end %>

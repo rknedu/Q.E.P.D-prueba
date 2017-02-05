@@ -1,0 +1,1 @@
+json.partial! "anforas/anfora", anfora: @anfora

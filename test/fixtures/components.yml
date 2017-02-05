@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  urna: one
+  velatorio: one
+  traslado: one
+  servicio_de_cinerario: one
+  anfora: one
+  burial_service: one
+  espacio: one
+  construction: one
+  location: one
+  support: one
+  plan: one
+
+two:
+  urna: two
+  velatorio: two
+  traslado: two
+  servicio_de_cinerario: two
+  anfora: two
+  burial_service: two
+  espacio: two
+  construction: two
+  location: two
+  support: two
+  plan: two

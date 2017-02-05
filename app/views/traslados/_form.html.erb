@@ -1,0 +1,34 @@
+<%= form_for :traslado do |f| %>
+
+  <div class="container">
+    <form role="form">
+      <div class="form-group">
+        <label for="carroza_de_instalacion">Carroza de Instalación:</label>
+        <input type="text" class="form-control" id="carroza_de_instalacion"
+               placeholder="Carroza de Instalación:">
+      </div>
+      <div class="form-group">
+        <label for="carroza_de_funeral">Carroza de Funeral:</label>
+        <input type="text" class="form-control" id="carroza_de_funeral"
+               placeholder="Carroza de Funeral:">
+      </div>
+      <div class="form-group">
+        <label for="carroza_para_flores">Carroza para Flores:</label>
+        <input type="text" class="form-control" id="carroza_para_flores"
+               placeholder="Carroza para Flores:">
+      </div>
+      <div class="form-group">
+        <label for="vehiculo_acompanamiento">Vehiculo de Acompañamiento:</label>
+        <input type="number" class="form-control" id="vehiculo_acompanamiento"
+               placeholder="Vehiculo de Acompañamiento:">
+      </div>
+      <div class="form-group">
+        <label for="capacidad_pasajeros">Capacidad Pasajeros:</label>
+        <input type="number" class="form-control" id="capacidad_pasajeros"
+               placeholder="Capacidad Pasajeros:">
+      </div>
+      <button type="submit" class="btn btn-default">Crear Traslado</button>
+    </form>
+  </div>
+
+<% end %>

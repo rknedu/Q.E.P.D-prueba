@@ -1,0 +1,1 @@
+json.partial! "formas_de_pagos/formas_de_pago", formas_de_pago: @formas_de_pago

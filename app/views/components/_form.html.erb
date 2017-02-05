@@ -1,0 +1,72 @@
+<%= form_for(component) do |f| %>
+  <% if component.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(component.errors.count, "error") %> prohibited this component from being saved:</h2>
+
+      <ul>
+      <% component.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :urna_id %>
+    <%= f.text_field :urna_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :velatorio_id %>
+    <%= f.text_field :velatorio_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :traslado_id %>
+    <%= f.text_field :traslado_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :servicio_de_cinerario_id %>
+    <%= f.text_field :servicio_de_cinerario_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :anfora_id %>
+    <%= f.text_field :anfora_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :burial_service_id %>
+    <%= f.text_field :burial_service_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :espacio_id %>
+    <%= f.text_field :espacio_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :construction_id %>
+    <%= f.text_field :construction_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location_id %>
+    <%= f.text_field :location_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :support_id %>
+    <%= f.text_field :support_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :plan_id %>
+    <%= f.text_field :plan_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

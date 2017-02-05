@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Servicio De Cinerarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Capilla</th>
+      <th>Sala de velatorio</th>
+      <th>Podium</th>
+      <th>Liturgia</th>
+      <th>Amplificacion</th>
+      <th>Diacono</th>
+      <th>Coro</th>
+      <th>Cafeteria</th>
+      <th>Ceremonia entre cenizas</th>
+      <th>Anfora incluida</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @servicio_de_cinerarios.each do |servicio_de_cinerario| %>
+      <tr>
+        <td><%= servicio_de_cinerario.capilla %></td>
+        <td><%= servicio_de_cinerario.sala_de_velatorio %></td>
+        <td><%= servicio_de_cinerario.podium %></td>
+        <td><%= servicio_de_cinerario.liturgia %></td>
+        <td><%= servicio_de_cinerario.amplificacion %></td>
+        <td><%= servicio_de_cinerario.diacono %></td>
+        <td><%= servicio_de_cinerario.coro %></td>
+        <td><%= servicio_de_cinerario.cafeteria %></td>
+        <td><%= servicio_de_cinerario.ceremonia_entre_cenizas %></td>
+        <td><%= servicio_de_cinerario.anfora_incluida %></td>
+        <td><%= link_to 'Show', servicio_de_cinerario %></td>
+        <td><%= link_to 'Edit', edit_servicio_de_cinerario_path(servicio_de_cinerario) %></td>
+        <td><%= link_to 'Destroy', servicio_de_cinerario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Servicio De Cinerario', new_servicio_de_cinerario_path %>

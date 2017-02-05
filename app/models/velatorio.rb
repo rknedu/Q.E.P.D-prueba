@@ -1,0 +1,2 @@
+class Velatorio < ApplicationRecord
+end

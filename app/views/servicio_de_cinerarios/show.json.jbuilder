@@ -1,0 +1,1 @@
+json.partial! "servicio_de_cinerarios/servicio_de_cinerario", servicio_de_cinerario: @servicio_de_cinerario

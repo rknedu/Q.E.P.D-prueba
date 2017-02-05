@@ -1,0 +1,1 @@
+json.array! @urnas, partial: 'urnas/urna', as: :urna

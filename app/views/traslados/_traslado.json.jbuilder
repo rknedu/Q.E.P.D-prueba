@@ -1,0 +1,2 @@
+json.extract! traslado, :id, :carroza_de_instalacion, :carroza_funeral, :carroza_para_flores, :vehiculo_acompanamiento, :capacidad_pasajeros, :created_at, :updated_at
+json.url traslado_url(traslado, format: :json)

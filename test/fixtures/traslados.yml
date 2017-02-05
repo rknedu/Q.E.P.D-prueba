@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carroza_de_instalacion: MyString
+  carroza_funeral: MyString
+  carroza_para_flores: MyString
+  vehiculo_acompa«Òamiento: 1
+  capacidad_pasajeros: 1
+
+two:
+  carroza_de_instalacion: MyString
+  carroza_funeral: MyString
+  carroza_para_flores: MyString
+  vehiculo_acompa«Òamiento: 1
+  capacidad_pasajeros: 1

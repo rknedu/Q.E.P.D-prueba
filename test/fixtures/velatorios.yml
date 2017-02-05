@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tramites_defuncion: MyString
+  asesor_a_domicilio: MyString
+  sala_de_velatorio: MyString
+  cirios: 1
+  portacirios: 1
+  cruz: 1
+  flores_en_canasto: 1
+  flores_cubre_urna: MyString
+  integer: MyString
+  libro_de_condolencias: 1
+  parroco: MyString
+  coro: 1
+  aviso_prensa: 1
+  tarjeta_agradecimiento: 1
+  cafeteria: MyString
+
+two:
+  tramites_defuncion: MyString
+  asesor_a_domicilio: MyString
+  sala_de_velatorio: MyString
+  cirios: 1
+  portacirios: 1
+  cruz: 1
+  flores_en_canasto: 1
+  flores_cubre_urna: MyString
+  integer: MyString
+  libro_de_condolencias: 1
+  parroco: MyString
+  coro: 1
+  aviso_prensa: 1
+  tarjeta_agradecimiento: 1
+  cafeteria: MyString
