@@ -1,26 +1,35 @@
-<%= form_for :location do |f| %>
+<%= form_for(location) do |f| %>
+<% if location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 
-  <div class="container">
-    <form role="form">
-      <div class="form-group">
-        <label for="lugar">Lugar:</label>
-        <input type="text" class="form-control" id="lugar"
-               placeholder="Lugar:">
-      </div>
-      <div class="form-group">
-        <label for="acceso_vehicular">Acceso Vehicular:</label>
-        <input type="text" class="form-control" id="acceso_vehicular"
-               placeholder="Acceso Vehicular:">
-      </div>
-      <div class="form-group">
-        <label for="nombre_sector">Nombre Sector:</label>
-        <input type="text" class="form-control" id="nombre_sector"
-               placeholder="Nombre Sector:">
-      </div>
-      <button type="submit" class="btn btn-default">Crear Urna</button>
-    </form>
-  </div>
+<form role="form">
+    <div class="form-group">
+        <%= f.label :lugar, "Lugar:" %>
+        <%= f.text_field :lugar, class:"form-control" %>  
+    </div>
+    <div class="form-group">
+       <%= f.radio_button :acceso_vehicular, :checked => false %>
+      <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+      <%= label :acceso_vehicular, 'Acceso Vehicular' %>
+    </div>
+    <div class="form-group">
+       <%= f.label :nombre_sector, "Nombre Sector" %>
+       <%= f.text_field :nombre_sector, class:"form-control" %>
+    </div>
+    <div class="actions">
+    <%= f.submit "Crear Ubicación", :class => "btn btn-success" %>
+</div> 
+</form
 
 
 <% end %>

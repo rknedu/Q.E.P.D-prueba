@@ -1,30 +1,38 @@
-<%= form_for :construction do |f| %>
-  
+<%= form_for(contruction) do |f| %>
+<% if construction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(construction.errors.count, "error") %> prohibited this construction from being saved:</h2>
 
-  <div class="container">
-    <form role="form">
+      <ul>
+      <% construction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<form role="form">
+
       <div class="form-group">
-        <label for="tipo">Tipo:</label>
-        <input type="text" class="form-control" id="tipo"
-               placeholder="Tipo:">
+          <%= f.label :tipo, "Tipo:" %>
+          <%= f.text_field :tipo, class:"form-control" %>  
       </div>
       <div class="form-group">
-        <label for="material">Material:</label>
-        <input type="text" class="form-control" id="material"
-               placeholder="Material:">
+         <%= f.label :material, "Material:" %>
+         <%= f.text_field :material, class:"form-control" %>
       </div>
       <div class="form-group">
-        <label for="terminacion">Terminación:</label>
-        <input type="text" class="form-control" id="terminacion"
-               placeholder="Terminación:">
+         <%= f.label :terminacion, "Terminación:" %>
+         <%= f.text_field :terminacion, class:"form-control" %>
       </div>
       <div class="form-group">
-        <label for="incluye_grabado">Incluye Grabado:</label>
-        <input type="text" class="form-control" id="incluye_grabado"
-               placeholder="Incluye Grabado:">
+         <%= f.label :incluye_grabado, "Incluye Grabado:" %>
+         <%= f.text_field :acepta_seguro_deceso, class:"form-control" %>
       </div>
-      <button type="submit" class="btn btn-default">Crear Urna</button>
-    </form>
-  </div>
+      <div class="actions">
+      <%= f.submit "Crear Construcción", :class => "btn btn-success" %>
+</div> 
+</form
+
 
 <% end %>

@@ -1,5 +1,10 @@
-<h1>New Comuna</h1>
+<div class="container">
+	<h1>Ingresar Comuna</h1>
 
-<%= render 'form', comuna: @comuna %>
+	<%= render 'form', comuna: @comuna %>
 
-<%= link_to 'Back', comunas_path %>
+	<div class="form-group ">
+		<%= link_to 'Atras', comunas_path, class: "btn btn-primary" %>	
+	</div>
+</div>
+

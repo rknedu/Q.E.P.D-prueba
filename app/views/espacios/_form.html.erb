@@ -1,30 +1,37 @@
-<%= form_for :espacio do |f| %>
+<%= form_for(espacio) do |f| %>
+<% if espacio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(espacio.errors.count, "error") %> prohibited this espacio from being saved:</h2>
+
+      <ul>
+      <% espacio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 
-  <div class="container">
-    <form role="form">
+<form role="form">
       <div class="form-group">
-        <label for="urna_adulto">Urna Adulto:</label>
-        <input type="number" class="form-control" id="urna_adulto"
-               placeholder="Urna Adulto:">
+          <%= f.label :urna_adulto, "Urna Adulto:" %>
+          <%= f.text_field :urna_adulto, class:"form-control" %>  
       </div>
       <div class="form-group">
-        <label for="urna_parvulo">Urna Parvulo:</label>
-        <input type="number" class="form-control" id="urna_parvulo"
-               placeholder="Urna Parvulo:">
+         <%= f.label :urna_parvulo, "Urna Parvulo:" %>
+         <%= f.text_field :urna_parvulo, class:"form-control" %>
       </div>
       <div class="form-group">
-        <label for="reduccion">Reducción:</label>
-        <input type="number" class="form-control" id="reduccion"
-               placeholder="Reducción:">
+         <%= f.label :reduccion, "Reducción:" %>
+         <%= f.text_field :reduccion, class:"form-control" %>
       </div>
       <div class="form-group">
-        <label for="Anfora">Anfora:</label>
-        <input type="number" class="form-control" id="Anfora"
-               placeholder="Anfora:">
+         <%= f.label :anfora, "Anfora:" %>
+         <%= f.text_field :anfora, class:"form-control" %>
       </div>
-      <button type="submit" class="btn btn-default">Crear Urna</button>
-    </form>
-  </div>
+      <div class="actions">
+      <%= f.submit "Crear Espacios", :class => "btn btn-success" %>
+</div> 
+</form
 
 <% end %>

@@ -1,5 +1,10 @@
-<h1>New Direction</h1>
+<div class="container">
+	<h1>Ingresar Dirección</h1>
 
-<%= render 'form', direction: @direction %>
+	<%= render 'form', direction: @direction %>
 
-<%= link_to 'Back', directions_path %>
+	<div class="form-group ">
+		<%= link_to 'Atras', directions_path, class: "btn btn-primary" %>	
+	</div>
+</div>
+

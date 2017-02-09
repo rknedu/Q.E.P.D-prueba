@@ -1,5 +1,10 @@
-<h1>New Component</h1>
+<div class="container">
+	<h1>Ingresar Componente</h1>
 
-<%= render 'form', component: @component %>
+	<%= render 'form', component: @component %>
 
-<%= link_to 'Back', components_path %>
+	<div class="form-group ">
+		<%= link_to 'Atras', components_path, class: "btn btn-primary" %>	
+	</div>
+</div>
+

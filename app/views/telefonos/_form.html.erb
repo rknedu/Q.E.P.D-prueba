@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :numero %>
-    <%= f.number_field :numero %>
+  <div class="form-group">
+    <%= f.label :numero, "Número:" %>
+    <%= f.text_field :numero, class:"form-control" %>  
   </div>
 
-  <div class="field">
-    <%= f.label :empresa_id %>
-    <%= f.text_field :empresa_id %>
+  <div class="form-group">
+      <%= f.label :empresa_id, "Empresa Id:" %>
+      <%= collection_select :Telefonos, :empresa_id, Empresa.all, :id, :nombre, {prompt: true}, {class: "form-control"}  %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear Telefono", class:"btn btn-success" %>
   </div>
 <% end %>

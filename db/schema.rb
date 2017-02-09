@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205130733) do
+ActiveRecord::Schema.define(version: 20170209131342) do
 
   create_table "anforas", force: :cascade do |t|
     t.string   "anfora_y_cobre"
@@ -20,31 +20,17 @@ ActiveRecord::Schema.define(version: 20170205130733) do
   end
 
   create_table "burial_services", force: :cascade do |t|
-    t.string   "capilla"
-    t.string   "sala_de_velatorio"
-    t.string   "liturgia"
+    t.boolean  "capilla"
+    t.boolean  "sala_de_velatorio"
+    t.boolean  "liturgia"
     t.integer  "toldo"
     t.integer  "silla"
-    t.string   "amplificacion"
-    t.string   "diacono"
+    t.boolean  "amplificacion"
+    t.boolean  "diacono"
     t.integer  "coro"
     t.string   "cafeteria"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-  end
-
-  create_table "caracteristicas", force: :cascade do |t|
-    t.string   "nombre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "componentes", force: :cascade do |t|
-    t.string   "nombre"
-    t.integer  "caracteristica_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["caracteristica_id"], name: "index_componentes_on_caracteristica_id"
   end
 
   create_table "components", force: :cascade do |t|
@@ -61,7 +47,6 @@ ActiveRecord::Schema.define(version: 20170205130733) do
     t.integer  "plan_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "servicio_id"
     t.index ["anfora_id"], name: "index_components_on_anfora_id"
     t.index ["burial_service_id"], name: "index_components_on_burial_service_id"
     t.index ["construction_id"], name: "index_components_on_construction_id"
@@ -85,15 +70,15 @@ ActiveRecord::Schema.define(version: 20170205130733) do
 
   create_table "conditions", force: :cascade do |t|
     t.integer  "formas_de_pago_id"
-    t.string   "pago_a_plazo"
-    t.string   "compra_anticipada"
+    t.boolean  "pago_a_plazo"
+    t.boolean  "compra_anticipada"
     t.string   "titulo_de_dominio"
-    t.string   "acepta_seguro_deceso"
+    t.boolean  "acepta_seguro_deceso"
     t.string   "seguro_de_degravamen"
     t.string   "seguro_cesantia"
     t.string   "convenio"
     t.string   "descuento_servicio_sepultacion"
-    t.string   "pensiones"
+    t.boolean  "pensiones"
     t.integer  "plan_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -150,7 +135,7 @@ ActiveRecord::Schema.define(version: 20170205130733) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "lugar"
-    t.string   "acceso_vehicular"
+    t.boolean  "acceso_vehicular"
     t.string   "nombre_sector"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -165,7 +150,6 @@ ActiveRecord::Schema.define(version: 20170205130733) do
     t.string   "nombre"
     t.integer  "codigo"
     t.integer  "precio"
-    t.integer  "publication_id"
     t.integer  "servicio_id"
     t.integer  "type_plan_id"
     t.integer  "tipo_cliente_id"
@@ -173,22 +157,9 @@ ActiveRecord::Schema.define(version: 20170205130733) do
     t.datetime "updated_at",      null: false
     t.integer  "empresa_id"
     t.integer  "condition_id"
-    t.index ["publication_id"], name: "index_plans_on_publication_id"
-    t.index ["condition_id"], name: "index_plans_on_publication_id"
     t.index ["servicio_id"], name: "index_plans_on_servicio_id"
     t.index ["tipo_cliente_id"], name: "index_plans_on_tipo_cliente_id"
     t.index ["type_plan_id"], name: "index_plans_on_type_plan_id"
-  end
-
-  create_table "publications", force: :cascade do |t|
-    t.date     "fecha"
-    t.string   "estado"
-    t.integer  "usuario_id"
-    t.integer  "type_publication_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.index ["type_publication_id"], name: "index_publications_on_type_publication_id"
-    t.index ["usuario_id"], name: "index_publications_on_usuario_id"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -204,16 +175,16 @@ ActiveRecord::Schema.define(version: 20170205130733) do
   end
 
   create_table "servicio_de_cinerarios", force: :cascade do |t|
-    t.string   "capilla"
-    t.string   "sala_de_velatorio"
-    t.string   "podium"
-    t.string   "liturgia"
-    t.string   "amplificacion"
-    t.string   "diacono"
+    t.boolean  "capilla"
+    t.boolean  "sala_de_velatorio"
+    t.boolean  "podium"
+    t.boolean  "liturgia"
+    t.boolean  "amplificacion"
+    t.boolean  "diacono"
     t.integer  "coro"
     t.string   "cafeteria"
-    t.string   "ceremonia_entre_cenizas"
-    t.string   "anfora_incluida"
+    t.boolean  "ceremonia_entre_cenizas"
+    t.boolean  "anfora_incluida"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -227,7 +198,7 @@ ActiveRecord::Schema.define(version: 20170205130733) do
   end
 
   create_table "supports", force: :cascade do |t|
-    t.string   "cobro_mantencion"
+    t.boolean  "cobro_mantencion"
     t.string   "tiempo_cobro"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -254,9 +225,9 @@ ActiveRecord::Schema.define(version: 20170205130733) do
   end
 
   create_table "traslados", force: :cascade do |t|
-    t.string   "carroza_de_instalacion"
-    t.string   "carroza_funeral"
-    t.string   "carroza_para_flores"
+    t.boolean  "carroza_de_instalacion"
+    t.boolean  "carroza_funeral"
+    t.boolean  "carroza_para_flores"
     t.integer  "vehiculo_acompanamiento"
     t.integer  "capacidad_pasajeros"
     t.datetime "created_at",              null: false
@@ -264,12 +235,6 @@ ActiveRecord::Schema.define(version: 20170205130733) do
   end
 
   create_table "type_plans", force: :cascade do |t|
-    t.string   "nombre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "type_publications", force: :cascade do |t|
     t.string   "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -309,8 +274,8 @@ ActiveRecord::Schema.define(version: 20170205130733) do
 
   create_table "velatorios", force: :cascade do |t|
     t.string   "tramites_defuncion"
-    t.string   "asesor_a_domicilio"
-    t.string   "sala_de_velatorio"
+    t.boolean  "asesor_a_domicilio"
+    t.boolean  "sala_de_velatorio"
     t.integer  "cirios"
     t.integer  "portacirios"
     t.integer  "cruz"
@@ -318,7 +283,7 @@ ActiveRecord::Schema.define(version: 20170205130733) do
     t.string   "flores_cubre_urna"
     t.string   "integer"
     t.integer  "libro_de_condolencias"
-    t.string   "parroco"
+    t.boolean  "parroco"
     t.integer  "coro"
     t.integer  "aviso_prensa"
     t.integer  "tarjeta_agradecimiento"

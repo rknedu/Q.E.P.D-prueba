@@ -1,21 +1,29 @@
-<%= form_for :anfora do |f| %>
+<%= form_for(anfora) do |f| %>
+<% if anfora.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(anfora.errors.count, "error") %> prohibited this anfora from being saved:</h2>
+
+      <ul>
+      <% anfora.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   
 
-  <div class="container">
-    <form role="form">
       <div class="form-group">
-        <label for="anfora_y_cobre">Anfora y Cobre:</label>
-        <input type="text" class="form-control" id="anfora_y_cobre"
-               placeholder="Anfora y Cobre:">
+         <%= f.label :anfora_y_cobre, "Anfora y Cobre:" %>
+         <%= f.text_field :anfora_y_cobre, class:"form-control" %>  
       </div>
       <div class="form-group">
-        <label for="anfora_cobre">Anfora Cobre:</label>
-        <input type="text" class="form-control" id="anfora_cobre"
-               placeholder="Anfora Cobre:">
+         <%= f.label :anfora_cobre, "Anfora Cobre:" %>
+         <%= f.text_field :anfora_cobre, class:"form-control" %>
       </div>
-      <button type="submit" class="btn btn-default">Crear Urna</button>
-    </form>
-  </div>
+      <div class="actions">
+         <%= f.submit "Crear Anfora", class:"btn btn-success" %>
+      </div> 
+
 
   
 <% end %>

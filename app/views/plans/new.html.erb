@@ -1,7 +1,10 @@
 <div class="container">
 	<h1>Ingresar Plan</h1>
 	<%= render 'form', plan: @plan %>
-	<%= link_to 'Back', plans_path %>
+	<div class="form-group ">
+		<%= link_to 'Atras', plans_path, class: "btn btn-primary" %>
+	</div>
+	
 </div>
 
 

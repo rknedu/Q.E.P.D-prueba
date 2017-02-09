@@ -1,55 +1,62 @@
-<%= form_for :burial_service do |f| %>
+<%= form_for(burial_service) do |f| %>
+<% if burial_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(burial_service.errors.count, "error") %> prohibited this burial_service from being saved:</h2>
 
+      <ul>
+      <% burial_service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="container">
-    <form role="form">
-      <div class="form-group">
-        <label for="capilla">Capilla:</label>
-        <input type="text" class="form-control" id="capilla"
-               placeholder="Capilla:">
+<form role="form">
+  <div class="form-group">
+      <%= f.radio_button :capilla, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :capilla, 'Capilla' %>  
       </div>
       <div class="form-group">
-        <label for="sala_de_velatorio">Sala de Velatorio:</label>
-        <input type="text" class="form-control" id="sala_de_velatorio"
-               placeholder="Sala de Velatorio:">
+         <%= f.radio_button :sala_de_velatorio, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :sala_de_velatorio, 'Sala de Velatorio' %>
       </div>
       <div class="form-group">
-        <label for="liturgia">Liturgia:</label>
-        <input type="text" class="form-control" id="liturgia"
-               placeholder="Liturgia:">
+         <%= f.radio_button :liturgia, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :liturgia, 'Liturgía' %>
       </div>
       <div class="form-group">
-        <label for="toldo">Toldo:</label>
-        <input type="number" class="form-control" id="toldo"
-               placeholder="Toldo:">
+         <%= f.label :toldo, "Toldo:" %>
+         <%= f.text_field :toldo, class:"form-control" %>
       </div>
       <div class="form-group">
-        <label for="silla">Silla:</label>
-        <input type="number" class="form-control" id="silla"
-               placeholder="Silla:">
+         <%= f.label :silla, "Silla:" %>
+         <%= f.text_field :silla, class:"form-control" %>
       </div>
       <div class="form-group">
-        <label for="amplificacion">Amplificación:</label>
-        <input type="text" class="form-control" id="amplificacion"
-               placeholder="Amplificación:">
+         <%= f.radio_button :amplificacion, :checked => false %>
+         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+         <%= label :amplificacion, 'Amplificación' %>
       </div>
       <div class="form-group">
-        <label for="diacono">Diacono:</label>
-        <input type="text" class="form-control" id="diacono"
-               placeholder="Diacono:">
+         <%= f.radio_button :diacono, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :diacono, 'Diacono' %>
       </div>
       <div class="form-group">
-        <label for="coro">Coro:</label>
-        <input type="number" class="form-control" id="coro"
-               placeholder="Coro:">
+         <%= f.label :coro, "Coro:" %>
+         <%= f.text_field :coro, class:"form-control" %>
       </div>
-       <div class="form-group">
-        <label for="cafeteria">Cafeteria:</label>
-        <input type="text" class="form-control" id="cafeteria"
-               placeholder="Cafeteria:">
+      <div class="form-group">
+         <%= f.label :cafeteria, "Cafeteria:" %>
+         <%= f.text_field :cafeteria, class:"form-control" %>
       </div>
-      <button type="submit" class="btn btn-default">Crear Urna</button>
-    </form>
-  </div>
+      <div class="actions">
+      <%= f.submit "Crear Servicio de Sepultación", :class => "btn btn-success" %>
+</div> 
+</form
+
 
 <% end %>

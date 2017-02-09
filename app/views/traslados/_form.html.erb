@@ -1,33 +1,44 @@
-<%= form_for :traslado do |f| %>
+<%= form_for(traslado) do |f| %>
+<% if traslado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(traslado.errors.count, "error") %> prohibited this traslado from being saved:</h2>
+
+      <ul>
+      <% traslado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="container">
     <form role="form">
       <div class="form-group">
-        <label for="carroza_de_instalacion">Carroza de Instalación:</label>
-        <input type="text" class="form-control" id="carroza_de_instalacion"
-               placeholder="Carroza de Instalación:">
+        <%= f.radio_button :carroza_de_instalacion, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :carroza_de_instalacion, 'Carroza de Instalación' %>
       </div>
       <div class="form-group">
-        <label for="carroza_de_funeral">Carroza de Funeral:</label>
-        <input type="text" class="form-control" id="carroza_de_funeral"
-               placeholder="Carroza de Funeral:">
+        <%= f.radio_button :carroza_funeral, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :carroza_funeral, 'Carroza Funeral' %>
       </div>
       <div class="form-group">
-        <label for="carroza_para_flores">Carroza para Flores:</label>
-        <input type="text" class="form-control" id="carroza_para_flores"
-               placeholder="Carroza para Flores:">
+        <%= f.radio_button :carroza_para_flores, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :carroza_para_flores, 'Carroza para Flores' %>
       </div>
       <div class="form-group">
-        <label for="vehiculo_acompanamiento">Vehiculo de Acompañamiento:</label>
-        <input type="number" class="form-control" id="vehiculo_acompanamiento"
-               placeholder="Vehiculo de Acompañamiento:">
+        <%= f.label :vehiculo_acompanamiento, "Vehiculo Acompañamiento:" %>
+        <%= f.text_field :vehiculo_acompanamiento, class:"form-control" %>
       </div>
       <div class="form-group">
-        <label for="capacidad_pasajeros">Capacidad Pasajeros:</label>
-        <input type="number" class="form-control" id="capacidad_pasajeros"
-               placeholder="Capacidad Pasajeros:">
+        <%= f.label :capacidad_pasajeros, "Capacidad Pasajeros:" %>
+        <%= f.text_field :capacidad_pasajeros, class:"form-control" %>
       </div>
-      <button type="submit" class="btn btn-default">Crear Traslado</button>
+      <div class="actions">
+        <%= f.submit "Crear Traslado", :class => "btn btn-success" %>
+      </div>
     </form>
   </div>
 

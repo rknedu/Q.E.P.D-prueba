@@ -15,6 +15,7 @@ class ServiciosController < ApplicationController
   # GET /servicios/new
   def new
     @servicio = Servicio.new
+    @components = Component.all
   end
 
   # GET /servicios/1/edit
@@ -69,6 +70,6 @@ class ServiciosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def servicio_params
-      params.require(:servicio).permit(:nombre, :componente_id)
+      params.require(:servicio).permit(:nombre, :component_id)
     end
 end

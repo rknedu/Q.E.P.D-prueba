@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :calle %>
-    <%= f.text_field :calle %>
+ <div class="form-group">
+    <%= f.label :calle, "Calle:" %>
+    <%= f.text_field :calle, class:"form-control" %>  
   </div>
 
-  <div class="field">
-    <%= f.label :numero %>
-    <%= f.number_field :numero %>
+  <div class="form-group">
+    <%= f.label :numero, "Número:" %>
+    <%= f.text_field :numero, class:"form-control" %>  
   </div>
 
-  <div class="field">
-    <%= f.label :sector %>
-    <%= f.text_field :sector %>
+  <div class="form-group">
+    <%= f.label :sector, "Sector:" %>
+    <%= f.text_field :sector, class:"form-control" %>  
   </div>
 
-  <div class="field">
-    <%= f.label :empresa_id %>
-    <%= f.text_field :empresa_id %>
+  <div class="form-group">
+      <%= f.label :empresa_id, "Empresa Id:" %>
+      <%= collection_select :direction, :empresa_id, Empresa.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
   </div>
 
-  <div class="field">
-    <%= f.label :comuna_id %>
-    <%= f.text_field :comuna_id %>
+  <div class="form-group">
+      <%= f.label :comuna_id, "Comuna Id:" %>
+      <%= collection_select :direction, :comuna_id, Comuna.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear Dirección", :class => "btn btn-success" %>
   </div>
 <% end %>

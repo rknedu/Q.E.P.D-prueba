@@ -69,6 +69,6 @@ class TypePlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def type_plan_params
-      params.require(:type_plan).permit(:nombre)
+      params.require(:type_plan).permit(:nombre, :plans)
     end
 end

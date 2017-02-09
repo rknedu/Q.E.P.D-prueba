@@ -1,5 +1,10 @@
-<h1>New Location</h1>
+<div class="container">
+	<h1>Ingresar Ubicación</h1>
 
-<%= render 'form', location: @location %>
+	<%= render 'form', location: @location %>
 
-<%= link_to 'Back', locations_path %>
+	<div class="form-group ">
+		<%= link_to 'Atras', locations_path, class: "btn btn-primary" %>	
+	</div>
+</div>
+

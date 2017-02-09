@@ -15,25 +15,10 @@
   <%= @plan.precio %>
 </p>
 
-<p>
-  <strong>Publication:</strong>
-  <%= @plan.publication %>
-</p>
-
-<p>
-  <strong>Servicio:</strong>
+<strong>Servicio:</strong>
   <%= @plan.servicio %>
 </p>
 
-<p>
-  <strong>Type plan:</strong>
-  <%= @plan.type_plan %>
-</p>
-
-<p>
-  <strong>Tipo cliente:</strong>
-  <%= @plan.tipo_cliente %>
-</p>
 
 <%= link_to 'Edit', edit_plan_path(@plan) %> |
 <%= link_to 'Back', plans_path %>

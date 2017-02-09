@@ -19,30 +19,6 @@ class PlansController < ApplicationController
     @type_plans = TypePlan.all 
     @tipo_clientes = TipoCliente.all
     @empresas = Empresa.all
-    @conditions = Condition.all
-    @conditions = Condition.new
-    @formas_de_pagos = FormasDePago.all
-    @components = Component.all
-    @urnas = Urna.all
-    @urnas = Urna.new
-    @velatorios = Velatorio.all
-    @velatorios = Velatorio.new
-    @traslados = Traslado.all
-    @traslados = Traslado.new
-    @servicio_de_cinerarios = ServicioDeCinerario.all
-    @servicio_de_cinerarios = ServicioDeCinerario.new
-    @anforas = Anfora.all
-    @anforas = Anfora.new
-    @burial_services = BurialService.all
-    @burial_services = BurialService.new
-    @espacios = Espacio.all
-    @espacios = Espacio.new
-    @constructions = Construction.all
-    @constructions = Construction.new
-    @locations = Location.all
-    @locations = Location.new
-    @supports = Support.all
-    @supports = Support.new
   end
 
   # GET /plans/1/edit
@@ -97,6 +73,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:nombre, :codigo, :precio, :publication_id, :servicio_id, :type_plan_id, :tipo_cliente_id)
+      params.require(:plan).permit(:nombre, :codigo, :precio, :empresa_id,  :servicio_id, :type_plan_id, :tipo_cliente_id)
     end
 end

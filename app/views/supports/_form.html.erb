@@ -1,19 +1,31 @@
-<%= form_for :support do |f| %>
+<%= form_for(support) do |f| %>
+<% if support.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(support.errors.count, "error") %> prohibited this support from being saved:</h2>
+
+      <ul>
+      <% support.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 
   <div class="container">
     <form role="form">
       <div class="form-group">
-        <label for="cobro_mantencion">Cobro Mantención:</label>
-        <input type="text" class="form-control" id="cobro_mantencion"
-               placeholder="Cobro Mantención:">
+        <%= f.radio_button :cobro_mantencion, :checked => false %>
+        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+        <%= label :cobro_mantencion, 'Cobro Mantención' %>
       </div>
       <div class="form-group">
-        <label for="tiempo_cobro">Tiempo Cobro:</label>
-        <input type="text" class="form-control" id="tiempo_cobro"
-               placeholder="Tiempo Cobro:">
+        <%= f.label :tiempo_cobro, "Tiempo Cobro::" %>
+        <%= f.text_field :tiempo_cobro, class:"form-control" %>
       </div>
-      <button type="submit" class="btn btn-default">Crear Urna</button>
+      <div class="actions">
+        <%= f.submit "Crear Mantención", :class => "btn btn-success" %>
+      </div>
     </form>
   </div>
 

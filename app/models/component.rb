@@ -10,5 +10,4 @@ class Component < ApplicationRecord
   belongs_to :location
   belongs_to :support
   belongs_to :plan
-  belongs_to :servicio
 end
