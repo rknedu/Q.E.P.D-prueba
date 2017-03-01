@@ -1,6 +1,9 @@
-<h1>Editing Servicio De Cinerario</h1>
+<div class="container">
+	<h1>Editando Servicio De Cinerario</h1>
 
-<%= render 'form', servicio_de_cinerario: @servicio_de_cinerario %>
+	<%= render 'form', servicio_de_cinerario: @servicio_de_cinerario %>
 
-<%= link_to 'Show', @servicio_de_cinerario %> |
-<%= link_to 'Back', servicio_de_cinerarios_path %>
+	<%= link_to 'Ver', @servicio_de_cinerario, class: "btn btn-default" %>
+	<%= link_to 'Atrás', servicio_de_cinerarios_path, class: "btn btn-danger" %>
+</div>
+

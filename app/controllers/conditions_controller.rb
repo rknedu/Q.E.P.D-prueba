@@ -70,6 +70,6 @@ class ConditionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def condition_params
-      params.require(:condition).permit(:formas_de_pago_id, :pago_a_plazo, :compra_anticipada, :titulo_de_dominio, :acepta_seguro_deceso, :seguro_de_degravamen, :seguro_cesantia, :convenio, :descuento_servicio_sepultacion, :pensiones, :plan_id)
+      params.require(:condition).permit(:formas_de_pago, :pago_a_plazo, :compra_anticipada, :titulo_de_dominio, :acepta_seguro_deceso, :seguro_de_degravamen, :seguro_cesantia, :convenio, :descuento_servicio_sepultacion, :pensiones, :plan_id)
     end
 end

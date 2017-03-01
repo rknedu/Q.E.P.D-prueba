@@ -1,0 +1,1 @@
+json.array! @tipo_atributos, partial: 'tipo_atributos/tipo_atributo', as: :tipo_atributo

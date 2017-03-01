@@ -1,6 +1,10 @@
-<h1>Editing Anfora</h1>
+<div class="container">
+	<h1>Editando Anfora</h1>
 
-<%= render 'form', anfora: @anfora %>
+	<%= render 'form', anfora: @anfora %>
 
-<%= link_to 'Show', @anfora %> |
-<%= link_to 'Back', anforas_path %>
+	<%= link_to 'Ver', @anfora, class: "btn btn-default" %>
+	<%= link_to 'Atrás', anforas_path, class: "btn btn-danger" %>
+</div>
+
+

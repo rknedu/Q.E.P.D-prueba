@@ -1,6 +1,9 @@
-<h1>Editing Velatorio</h1>
+<div class="container">
+	<h1>Editando Velatorio</h1>
 
-<%= render 'form', velatorio: @velatorio %>
+	<%= render 'form', velatorio: @velatorio %>
 
-<%= link_to 'Show', @velatorio %> |
-<%= link_to 'Back', velatorios_path %>
+	<%= link_to 'Ver', @velatorio, class: "btn btn-default" %>
+	<%= link_to 'Atrás', velatorios_path, class: "btn btn-danger" %>
+</div>
+

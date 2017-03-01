@@ -5,7 +5,12 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.json
   def index
-    @plans = Plan.all
+     @q = params[:q]
+    if @q
+      @plans = Plan.where(:servicio_id => @q)
+    else
+      @plans = Plan.all
+     end
   end
 
   # GET /plans/1

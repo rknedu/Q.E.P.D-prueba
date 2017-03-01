@@ -1,29 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Modelo:</strong>
-  <%= @urna.modelo %>
-</p>
+  <p>
+    <strong>Modelo:</strong>
+    <%= @urna.modelo %>
+  </p>
 
-<p>
-  <strong>Medida:</strong>
-  <%= @urna.medida %>
-</p>
+  <p>
+    <strong>Medida:</strong>
+    <%= @urna.medida %>
+  </p>
 
-<p>
-  <strong>Material:</strong>
-  <%= @urna.material %>
-</p>
+  <p>
+    <strong>Material:</strong>
+    <%= @urna.material %>
+  </p>
 
-<p>
-  <strong>Terminacion:</strong>
-  <%= @urna.terminacion %>
-</p>
+  <p>
+    <strong>Terminacion:</strong>
+    <%= @urna.terminacion %>
+  </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @urna.color %>
-</p>
+  <p>
+    <strong>Color:</strong>
+    <%= @urna.color %>
+  </p>
 
-<%= link_to 'Edit', edit_urna_path(@urna) %> |
-<%= link_to 'Back', urnas_path %>
+  <br>
+
+  <p>
+  <strong>Seleccione otro componente que desea agregar al plan:</strong>
+  </p>
+
+
+  <div class="form-group">
+    <%= link_to "Velatorio", {controller: "velatorios", action: "new"}, class: "btn btn-primary"%>
+    <%= link_to "Traslado", {controller: "traslados", action: "new"}, class: "btn btn-success"%>
+  </div>
+
+
+  <br>
+      
+
+  <%= link_to 'Editar', edit_urna_path(@urna), class: "btn btn-default" %>
+  <%= link_to 'Atrás', urnas_path, class: "btn btn-danger" %>
+
+</div>

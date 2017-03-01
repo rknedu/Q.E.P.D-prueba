@@ -1,0 +1,1 @@
+json.array! @componentes_plans, partial: 'componentes_plans/componentes_plan', as: :componentes_plan

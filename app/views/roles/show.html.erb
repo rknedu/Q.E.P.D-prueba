@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @role.nombre %>
-</p>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @role.nombre %>
+	</p>
 
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+	<%= link_to 'Editar', edit_role_path(@role), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', roles_path, class: "btn btn-danger" %>
+</div>
+

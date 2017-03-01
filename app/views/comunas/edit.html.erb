@@ -1,6 +1,9 @@
-<h1>Editing Comuna</h1>
+<div class="container">
+	<h1>Editando Comuna</h1>
 
-<%= render 'form', comuna: @comuna %>
+	<%= render 'form', comuna: @comuna %>
 
-<%= link_to 'Show', @comuna %> |
-<%= link_to 'Back', comunas_path %>
+	<%= link_to 'Ver', @comuna, class: "btn btn-default" %>
+	<%= link_to 'Atrás', comunas_path, class: "btn btn-danger" %>
+</div>
+

@@ -1,3 +1,3 @@
 class Telefono < ApplicationRecord
-  belongs_to :empresa
+  belongs_to :sede
 end

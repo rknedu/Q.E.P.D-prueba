@@ -1,2 +1,2 @@
-json.extract! condition, :id, :formas_de_pago_id, :pago_a_plazo, :compra_anticipada, :titulo_de_dominio, :acepta_seguro_deceso, :seguro_de_degravamen, :seguro_cesantia, :convenio, :descuento_servicio_sepultacion, :pensiones, :plan_id, :created_at, :updated_at
+json.extract! condition, :id, :formas_de_pago, :pago_a_plazo, :compra_anticipada, :titulo_de_dominio, :acepta_seguro_deceso, :seguro_de_degravamen, :seguro_cesantia, :convenio, :descuento_servicio_sepultacion, :pensiones, :plan_id, :created_at, :updated_at
 json.url condition_url(condition, format: :json)

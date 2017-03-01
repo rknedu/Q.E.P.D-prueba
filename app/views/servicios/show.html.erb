@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @servicio.nombre %>
-</p>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @servicio.nombre %>
+	</p>
 
-<p>
-  <strong>Component:</strong>
-  <%= @servicio.componente_id %>
-</p>
+	<p>
+	  <strong>Component:</strong>
+	  <%= @servicio.tipo_empresa.nombre %>
+	</p>
 
-<%= link_to 'Edit', edit_servicio_path(@servicio) %> |
-<%= link_to 'Back', servicios_path %>
+	<%= link_to 'Editar', edit_servicio_path(@servicio), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', servicios_path, class: "btn btn-danger" %>
+</div>
+

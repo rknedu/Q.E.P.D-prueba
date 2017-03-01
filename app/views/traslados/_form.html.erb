@@ -11,35 +11,34 @@
     </div>
   <% end %>
 
-  <div class="container">
-    <form role="form">
-      <div class="form-group">
-        <%= f.radio_button :carroza_de_instalacion, :checked => false %>
-        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
-        <%= label :carroza_de_instalacion, 'Carroza de Instalación' %>
-      </div>
-      <div class="form-group">
-        <%= f.radio_button :carroza_funeral, :checked => false %>
-        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
-        <%= label :carroza_funeral, 'Carroza Funeral' %>
-      </div>
-      <div class="form-group">
-        <%= f.radio_button :carroza_para_flores, :checked => false %>
-        <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
-        <%= label :carroza_para_flores, 'Carroza para Flores' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :vehiculo_acompanamiento, "Vehiculo Acompañamiento:" %>
-        <%= f.text_field :vehiculo_acompanamiento, class:"form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :capacidad_pasajeros, "Capacidad Pasajeros:" %>
-        <%= f.text_field :capacidad_pasajeros, class:"form-control" %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Crear Traslado", :class => "btn btn-success" %>
-      </div>
-    </form>
+
+<form role="form">
+  <div class="form-group">
+    <%= f.check_box :carroza_de_instalacion, :checked => false %>
+    <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+    <%= label :carroza_de_instalacion, 'Carroza de Instalación' %>
   </div>
+   <div class="form-group">
+    <%= f.check_box :carroza_funeral, :checked => false %>
+    <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+    <%= label :carroza_funeral, 'Carroza Funeral' %>
+  </div>
+  <div class="form-group">
+    <%= f.check_box :carroza_para_flores, :checked => false %>
+    <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+    <%= label :carroza_para_flores, 'Carroza para Flores' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :vehiculo_acompanamiento, "Vehiculo Acompañamiento:" %>
+    <%= f.number_field :vehiculo_acompanamiento, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :capacidad_pasajeros, "Capacidad Pasajeros:" %>
+    <%= f.number_field :capacidad_pasajeros, class:"form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Crear Traslado", :class => "btn btn-success" %>
+  </div>
+</form>
 
 <% end %>

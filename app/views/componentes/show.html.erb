@@ -1,0 +1,18 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @componente.nombre %>
+	</p>
+
+	<p>
+	  <strong>Servicio:</strong>
+	  <%= @componente.servicio.nombre %>
+	</p>
+
+	<%= link_to 'Editar', edit_componente_path(@componente), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', componentes_path, class: "btn btn-danger" %>
+</div>
+
+

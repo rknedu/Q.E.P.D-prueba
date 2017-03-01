@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @comuna.nombre %>
-</p>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @comuna.nombre %>
+	</p>
 
-<p>
-  <strong>Region:</strong>
-  <%= @comuna.region %>
-</p>
+	<p>
+	  <strong>Region:</strong>
+	  <%= @comuna.region %>
+	</p>
 
-<%= link_to 'Edit', edit_comuna_path(@comuna) %> |
-<%= link_to 'Back', comunas_path %>
+	<%= link_to 'Editar', edit_comuna_path(@comuna), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', comunas_path, class: "btn btn-danger" %>
+
+</div>

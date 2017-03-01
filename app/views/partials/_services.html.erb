@@ -14,9 +14,11 @@
                         </span>
                             <h4>
                                 <strong>Funerarias</strong>
+                                <%= @servicios %>
                             </h4>
                             <p>Elige el mejor plan funerario</p>
-                            <a href="#" class="btn btn-light">Cotizar</a>
+                                <%= link_to "Cotizar", {controller: "/plans", action: "index", q: Servicio.find(8).id}, class: "btn btn-default"%>
+
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -29,9 +31,10 @@
                                 <strong>Crematorios</strong>
                             </h4>
                             <p>Elige el mejor servicio de cremación</p>
-                            <a href="#" class="btn btn-light">Cotizar</a>
+                                <%= link_to "Cotizar", {controller: "/plans", action: "index", q: Servicio.find(6).id}, class: "btn btn-default"%>
                         </div>
                     </div>
+
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
                             <span class="fa-stack fa-4x">
@@ -42,7 +45,7 @@
                                 <strong>Sepulturas</strong>
                             </h4>
                             <p>Elige el mejor plan de cementerio</p>
-                            <a href="#" class="btn btn-light">Cotizar</a>
+                                <%= link_to "Cotizar", {controller: "/plans", action: "index", q: Servicio.find(7).id}, class: "btn btn-default"%>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -55,7 +58,7 @@
                                 <strong>Servicios de Sepultación</strong>
                             </h4>
                             <p>Elige el mejor servicio de sepultación</p>
-                            <a href="#" class="btn btn-light">Cotizar</a>
+                                <%= link_to "Cotizar", {controller: "/plans", action: "index", q: Servicio.find(1).id}, class: "btn btn-default"%>
                         </div>
                     </div>
                 </div>

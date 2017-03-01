@@ -1,59 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="conainer">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Formas de pago:</strong>
-  <%= @condition.formas_de_pago %>
-</p>
+  <p>
+    <strong>Formas de pago:</strong>
+    <%= @condition.formas_de_pago %>
+  </p>
 
-<p>
-  <strong>Pago a plazo:</strong>
-  <%= @condition.pago_a_plazo %>
-</p>
+  <p>
+    <strong>Pago a plazo:</strong>
+    <%= @condition.pago_a_plazo %>
+  </p>
 
-<p>
-  <strong>Compra anticipada:</strong>
-  <%= @condition.compra_anticipada %>
-</p>
+  <p>
+    <strong>Compra anticipada:</strong>
+    <%= @condition.compra_anticipada %>
+  </p>
 
-<p>
-  <strong>Titulo de dominio:</strong>
-  <%= @condition.titulo_de_dominio %>
-</p>
+  <p>
+    <strong>Titulo de dominio:</strong>
+    <%= @condition.titulo_de_dominio %>
+  </p>
 
-<p>
-  <strong>Acepta seguro deceso:</strong>
-  <%= @condition.acepta_seguro_deceso %>
-</p>
+  <p>
+    <strong>Acepta seguro deceso:</strong>
+    <%= @condition.acepta_seguro_deceso %>
+  </p>
 
-<p>
-  <strong>Seguro de degravamen:</strong>
-  <%= @condition.seguro_de_degravamen %>
-</p>
+  <p>
+    <strong>Seguro de degravamen:</strong>
+    <%= @condition.seguro_de_degravamen %>
+  </p>
 
-<p>
-  <strong>Seguro cesantia:</strong>
-  <%= @condition.seguro_cesantia %>
-</p>
+  <p>
+    <strong>Seguro cesantia:</strong>
+    <%= @condition.seguro_cesantia %>
+  </p>
 
-<p>
-  <strong>Convenio:</strong>
-  <%= @condition.convenio %>
-</p>
+  <p>
+    <strong>Convenio:</strong>
+    <%= @condition.convenio %>
+  </p>
 
-<p>
-  <strong>Descuento servicio sepultacion:</strong>
-  <%= @condition.descuento_servicio_sepultacion %>
-</p>
+  <p>
+    <strong>Descuento servicio sepultacion:</strong>
+    <%= @condition.descuento_servicio_sepultacion %>
+  </p>
 
-<p>
-  <strong>Pensiones:</strong>
-  <%= @condition.pensiones %>
-</p>
+  <p>
+    <strong>Pensiones:</strong>
+    <%= @condition.pensiones %>
+  </p>
 
-<p>
-  <strong>Plan:</strong>
-  <%= @condition.plans %>
-</p>
+  <p>
+    <strong>Plan:</strong>
+    <%= @condition.plan.nombre %>
+  </p>
 
-<%= link_to 'Edit', edit_condition_path(@condition) %> |
-<%= link_to 'Back', conditions_path %>
+
+  <%= link_to 'Editar', edit_condition_path(@condition), class: "btn btn-default" %>
+  <%= link_to 'Atrás', conditions_path, class: "btn btn-danger" %>
+</div>

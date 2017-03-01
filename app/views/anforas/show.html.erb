@@ -1,14 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Anfora y cobre:</strong>
-  <%= @anfora.anfora_y_cobre %>
-</p>
+	<p>
+	  <strong>Anfora y cobre:</strong>
+	  <%= @anfora.anfora_y_cobre %>
+	</p>
 
-<p>
-  <strong>Anfora cobre:</strong>
-  <%= @anfora.anfora_cobre %>
-</p>
+	<p>
+	  <strong>Anfora cobre:</strong>
+	  <%= @anfora.anfora_cobre %>
+	</p>
 
-<%= link_to 'Edit', edit_anfora_path(@anfora) %> |
-<%= link_to 'Back', anforas_path %>
+	<br>
+
+	<p>
+	  <strong>Seleccione otro componente que desea agregar al plan:</strong>
+	</p>
+
+
+	<div class="form-group">
+	  <%= link_to "Servicio de Cinerario", {controller: "servicio_de_cinerarios", action: "new"}, class: "btn btn-primary"%>
+	</div>
+
+
+	<br>
+	      
+
+	<%= link_to 'Editar', edit_anfora_path(@anfora), class: "btn btn-default" %>
+	<%= link_to 'Atrás', anforas_path, class: "btn btn-danger" %>
+
+</div>
+

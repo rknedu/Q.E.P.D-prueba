@@ -1,6 +1,10 @@
-<h1>Editing Telefono</h1>
+<div class="container">
+	<h1>Editando Telefono</h1>
 
-<%= render 'form', telefono: @telefono %>
+	<%= render 'form', telefono: @telefono %>
 
-<%= link_to 'Show', @telefono %> |
-<%= link_to 'Back', telefonos_path %>
+	<%= link_to 'Ver', @telefono, class: "btn btn-default" %>
+	<%= link_to 'Atrás', telefonos_path, class: "btn btn-danger" %>
+</div>
+
+

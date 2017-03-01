@@ -1,6 +1,9 @@
-<h1>Editing Condition</h1>
+<div class="container">
+	<h1>Editando Condición</h1>
 
-<%= render 'form', condition: @condition %>
+	<%= render 'form', condition: @condition %>
 
-<%= link_to 'Show', @condition %> |
-<%= link_to 'Back', conditions_path %>
+	<%= link_to 'Ver', @condition, class: "btn btn-default" %>
+	<%= link_to 'Atrás', conditions_path, class: "btn btn-danger" %>
+</div>
+

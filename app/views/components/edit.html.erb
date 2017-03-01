@@ -1,6 +1,9 @@
-<h1>Editing Component</h1>
+<div class="container">
+	<h1>Editando Componente</h1>
 
-<%= render 'form', component: @component %>
+	<%= render 'form', component: @component %>
 
-<%= link_to 'Show', @component %> |
-<%= link_to 'Back', components_path %>
+	<%= link_to 'Ver', @component, class: "btn btn-default" %>
+	<%= link_to 'Atrás', components_path, class: "btn btn-danger" %>
+</div>
+

@@ -1,6 +1,9 @@
-<h1>Editing Espacio</h1>
+<div class="container">
+	<h1>Editando Capacidad</h1>
 
-<%= render 'form', espacio: @espacio %>
+	<%= render 'form', espacio: @espacio %>
 
-<%= link_to 'Show', @espacio %> |
-<%= link_to 'Back', espacios_path %>
+	<%= link_to 'Ver', @espacio, class: "btn btn-default" %>
+	<%= link_to 'Atrás', espacios_path, class: "btn btn-danger" %>
+</div>
+

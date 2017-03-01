@@ -1,0 +1,1 @@
+json.partial! "componentes_plans/componentes_plan", componentes_plan: @componentes_plan

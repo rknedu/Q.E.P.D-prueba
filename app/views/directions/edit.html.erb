@@ -1,6 +1,9 @@
-<h1>Editing Direction</h1>
+<div class="container">
+	<h1>Editando Dirección</h1>
 
-<%= render 'form', direction: @direction %>
+	<%= render 'form', direction: @direction %>
 
-<%= link_to 'Show', @direction %> |
-<%= link_to 'Back', directions_path %>
+	<%= link_to 'Ver', @direction, class: "btn btn-default" %>
+	<%= link_to 'Atrás', directions_path, class: "btn btn-danger" %>
+</div>
+

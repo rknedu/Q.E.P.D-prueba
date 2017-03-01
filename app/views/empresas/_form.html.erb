@@ -17,18 +17,23 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :ubicacion, "Ubicación:" %>
-      <%= f.text_field :ubicacion, class:"form-control" %>  
-    </div>
-
-    <div class="form-group">
       <%= f.label :email, "Email:" %>
       <%= f.text_field :email, class:"form-control" %>  
     </div>
 
+     <div class="form-group">
+      <%= f.label :rut, "Rut:" %>
+      <%= f.text_field :rut, class:"form-control" %>  
+    </div>
+
+    <div class="form-group">
+      <label>Usuario:</label>
+      <%= f.collection_select :usuario_id, Usuario.all, :id, :email, {prompt: true}, {class: "form-control"}  %>
+    </div>
+
     <div class="form-group">
       <label>Tipo de Empresa:</label>
-      <%= collection_select :empresa, :tipo_empresa_id, @tipo_empresas, :id, :nombre, {prompt: true}, {class: "form-control"}  %>
+      <%= f.collection_select :tipo_empresa_id, TipoEmpresa.all, :id, :nombre, {prompt: true}, {class: "form-control"}  %>
     </div>
 
     <div class="actions">

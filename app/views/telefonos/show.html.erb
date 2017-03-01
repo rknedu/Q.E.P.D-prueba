@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
+	
 
-<p>
-  <strong>Numero:</strong>
-  <%= @telefono.numero %>
-</p>
+	<p>
+	  <strong>Numero:</strong>
+	  <%= @telefono.numero %>
+	</p>
 
-<p>
-  <strong>Empresa:</strong>
-  <%= @telefono.empresa %>
-</p>
+	<p>
+	  <strong>Empresa:</strong>
+	  <%= @telefono.sede.nombre %>
+	</p>
 
-<%= link_to 'Edit', edit_telefono_path(@telefono) %> |
-<%= link_to 'Back', telefonos_path %>
+	<%= link_to 'Editar', edit_telefono_path(@telefono), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', telefonos_path, class: "btn btn-danger" %>
+</div>
+

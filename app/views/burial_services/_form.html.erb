@@ -13,41 +13,41 @@
 
 <form role="form">
   <div class="form-group">
-      <%= f.radio_button :capilla, :checked => false %>
+      <%= f.check_box :capilla, :checked => false %>
         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
         <%= label :capilla, 'Capilla' %>  
       </div>
       <div class="form-group">
-         <%= f.radio_button :sala_de_velatorio, :checked => false %>
+         <%= f.check_box :sala_de_velatorio, :checked => false %>
         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
         <%= label :sala_de_velatorio, 'Sala de Velatorio' %>
       </div>
       <div class="form-group">
-         <%= f.radio_button :liturgia, :checked => false %>
+         <%= f.check_box :liturgia, :checked => false %>
         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
         <%= label :liturgia, 'Liturgía' %>
       </div>
       <div class="form-group">
          <%= f.label :toldo, "Toldo:" %>
-         <%= f.text_field :toldo, class:"form-control" %>
+         <%= f.number_field :toldo, class:"form-control" %>
       </div>
       <div class="form-group">
          <%= f.label :silla, "Silla:" %>
-         <%= f.text_field :silla, class:"form-control" %>
+         <%= f.number_field :silla, class:"form-control" %>
       </div>
       <div class="form-group">
-         <%= f.radio_button :amplificacion, :checked => false %>
+         <%= f.check_box :amplificacion, :checked => false %>
          <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
          <%= label :amplificacion, 'Amplificación' %>
       </div>
       <div class="form-group">
-         <%= f.radio_button :diacono, :checked => false %>
+         <%= f.check_box :diacono, :checked => false %>
         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
         <%= label :diacono, 'Diacono' %>
       </div>
       <div class="form-group">
          <%= f.label :coro, "Coro:" %>
-         <%= f.text_field :coro, class:"form-control" %>
+         <%= f.number_field :coro, class:"form-control" %>
       </div>
       <div class="form-group">
          <%= f.label :cafeteria, "Cafeteria:" %>

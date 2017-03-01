@@ -1,79 +1,98 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tramites defuncion:</strong>
-  <%= @velatorio.tramites_defuncion %>
-</p>
+  <p>
+    <strong>Tramites defuncion:</strong>
+    <%= @velatorio.tramites_defuncion %>
+  </p>
 
-<p>
-  <strong>Asesor a domicilio:</strong>
-  <%= @velatorio.asesor_a_domicilio %>
-</p>
+  <p>
+    <strong>Asesor a domicilio:</strong>
+    <%= @velatorio.asesor_a_domicilio %>
+  </p>
 
-<p>
-  <strong>Sala de velatorio:</strong>
-  <%= @velatorio.sala_de_velatorio %>
-</p>
+  <p>
+    <strong>Sala de velatorio:</strong>
+    <%= @velatorio.sala_de_velatorio %>
+  </p>
 
-<p>
-  <strong>Cirios:</strong>
-  <%= @velatorio.cirios %>
-</p>
+  <p>
+    <strong>Cirios:</strong>
+    <%= @velatorio.cirios %>
+  </p>
 
-<p>
-  <strong>Portacirios:</strong>
-  <%= @velatorio.portacirios %>
-</p>
+  <p>
+    <strong>Portacirios:</strong>
+    <%= @velatorio.portacirios %>
+  </p>
 
-<p>
-  <strong>Cruz:</strong>
-  <%= @velatorio.cruz %>
-</p>
+  <p>
+    <strong>Cruz:</strong>
+    <%= @velatorio.cruz %>
+  </p>
 
-<p>
-  <strong>Flores en canasto:</strong>
-  <%= @velatorio.flores_en_canasto %>
-</p>
+  <p>
+    <strong>Flores en canasto:</strong>
+    <%= @velatorio.flores_en_canasto %>
+  </p>
 
-<p>
-  <strong>Flores cubre urna:</strong>
-  <%= @velatorio.flores_cubre_urna %>
-</p>
+  <p>
+    <strong>Flores cubre urna:</strong>
+    <%= @velatorio.flores_cubre_urna %>
+  </p>
 
-<p>
-  <strong>Integer:</strong>
-  <%= @velatorio.integer %>
-</p>
+  <p>
+    <strong>Integer:</strong>
+    <%= @velatorio.integer %>
+  </p>
 
-<p>
-  <strong>Libro de condolencias:</strong>
-  <%= @velatorio.libro_de_condolencias %>
-</p>
+  <p>
+    <strong>Libro de condolencias:</strong>
+    <%= @velatorio.libro_de_condolencias %>
+  </p>
 
-<p>
-  <strong>Parroco:</strong>
-  <%= @velatorio.parroco %>
-</p>
+  <p>
+    <strong>Parroco:</strong>
+    <%= @velatorio.parroco %>
+  </p>
 
-<p>
-  <strong>Coro:</strong>
-  <%= @velatorio.coro %>
-</p>
+  <p>
+    <strong>Coro:</strong>
+    <%= @velatorio.coro %>
+  </p>
 
-<p>
-  <strong>Aviso prensa:</strong>
-  <%= @velatorio.aviso_prensa %>
-</p>
+  <p>
+    <strong>Aviso prensa:</strong>
+    <%= @velatorio.aviso_prensa %>
+  </p>
 
-<p>
-  <strong>Tarjeta agradecimiento:</strong>
-  <%= @velatorio.tarjeta_agradecimiento %>
-</p>
+  <p>
+    <strong>Tarjeta agradecimiento:</strong>
+    <%= @velatorio.tarjeta_agradecimiento %>
+  </p>
 
-<p>
-  <strong>Cafeteria:</strong>
-  <%= @velatorio.cafeteria %>
-</p>
+  <p>
+    <strong>Cafeteria:</strong>
+    <%= @velatorio.cafeteria %>
+  </p>
 
-<%= link_to 'Edit', edit_velatorio_path(@velatorio) %> |
-<%= link_to 'Back', velatorios_path %>
+
+  <br>
+
+  <p>
+  <strong>Seleccione otro componente que desea agregar al plan:</strong>
+  </p>
+
+
+  <div class="form-group">
+    <%= link_to "Urna", {controller: "urnas", action: "new"}, class: "btn btn-primary"%>
+    <%= link_to "Traslado", {controller: "traslados", action: "new"}, class: "btn btn-success"%>
+  </div>
+
+
+  <br>
+
+  <%= link_to 'Editar', edit_velatorio_path(@velatorio), class: "btn btn-default" %>
+  <%= link_to 'Atrás', velatorios_path, class: "btn btn-danger" %>
+</div>
+

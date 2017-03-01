@@ -15,19 +15,19 @@
 <form role="form">
       <div class="form-group">
           <%= f.label :urna_adulto, "Urna Adulto:" %>
-          <%= f.text_field :urna_adulto, class:"form-control" %>  
+          <%= f.number_field :urna_adulto, class:"form-control" %>  
       </div>
       <div class="form-group">
          <%= f.label :urna_parvulo, "Urna Parvulo:" %>
-         <%= f.text_field :urna_parvulo, class:"form-control" %>
+         <%= f.number_field :urna_parvulo, class:"form-control" %>
       </div>
       <div class="form-group">
          <%= f.label :reduccion, "Reducción:" %>
-         <%= f.text_field :reduccion, class:"form-control" %>
+         <%= f.number_field :reduccion, class:"form-control" %>
       </div>
       <div class="form-group">
-         <%= f.label :anfora, "Anfora:" %>
-         <%= f.text_field :anfora, class:"form-control" %>
+         <%= f.label :Anfora, "Anfora:" %>
+         <%= f.number_field :Anfora, class:"form-control" %>
       </div>
       <div class="actions">
       <%= f.submit "Crear Espacios", :class => "btn btn-success" %>

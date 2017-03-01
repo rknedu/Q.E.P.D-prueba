@@ -1,0 +1,27 @@
+<%= form_for(atributos_componente) do |f| %>
+  <% if atributos_componente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(atributos_componente.errors.count, "error") %> prohibited this atributos_componente from being saved:</h2>
+
+      <ul>
+      <% atributos_componente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Componente:</label>
+    <%= f.collection_select :componente_id, Componente.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <label>Atributo:</label>
+    <%= f.collection_select :atributo_id, Atributo.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Crear Atributo Componente", :class => "btn btn-success" %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Titulo:</strong>
+	  <%= @image.titulo %>
+	</p>
+
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @image.nombre %>
+	</p>
+
+	<div>
+	  <%= image_tag @image.cover.url(:thumb) %>
+	</div>
+
+	<p>
+	  <strong>Componente:</strong>
+	  <%= @image.componente.nombre %>
+	</p>
+
+	<p>
+	  <strong>Plan:</strong>
+	  <%= @image.plan.nombre %>
+	</p>
+
+	<%= link_to 'Editar', edit_image_path(@image), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', images_path, class: "btn btn-danger" %>
+</div>
+

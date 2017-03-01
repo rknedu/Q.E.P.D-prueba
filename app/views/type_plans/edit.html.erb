@@ -1,6 +1,9 @@
-<h1>Editing Type Plan</h1>
+<div class="container">
+	<h1>Editando Tipo Plan</h1>
 
-<%= render 'form', type_plan: @type_plan %>
+	<%= render 'form', type_plan: @type_plan %>
 
-<%= link_to 'Show', @type_plan %> |
-<%= link_to 'Back', type_plans_path %>
+	<%= link_to 'Ver', @type_plan, class: "btn btn-default" %>
+	<%= link_to 'Atrás', type_plans_path, class: "btn btn-danger" %>
+</div>
+

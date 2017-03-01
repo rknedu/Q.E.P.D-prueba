@@ -1,0 +1,52 @@
+<%= form_for(sede) do |f| %>
+  <% if sede.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sede.errors.count, "error") %> prohibited this sede from being saved:</h2>
+
+      <ul>
+      <% sede.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nombre, "Nombre:" %>
+    <%= f.text_field :nombre, class:"form-control" %>  
+  </div>
+
+  <div class="form-group">
+    <label>Empresa:</label>
+    <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, {prompt: true}, {class: "form-control"}  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :calle, "Calle:" %>
+    <%= f.text_field :calle, class:"form-control" %>  
+  </div>
+
+  <div class="form-group">
+    <%= f.label :numero, "Numero:" %>
+    <%= f.number_field :numero, class:"form-control" %>  
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sector, "Sector:" %>
+    <%= f.text_field :sector, class:"form-control" %>  
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ubicacion, "Ubicación:" %>
+    <%= f.text_field :ubicacion, class:"form-control" %>  
+  </div>
+
+  <div class="form-group">
+    <label>Comuna:</label>
+    <%= f.collection_select :comuna_id, Comuna.all, :id, :nombre, {prompt: true}, {class: "form-control"}  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Crear Sede", :class => "btn btn-success" %>
+  </div>
+<% end %>

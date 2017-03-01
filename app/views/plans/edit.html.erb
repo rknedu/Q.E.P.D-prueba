@@ -1,6 +1,17 @@
-<h1>Editing Plan</h1>
+<div class="container">
+	<h1>Editando Plan</h1>
 
-<%= render 'form', plan: @plan %>
+	<%= render 'form', plan: @plan %>
 
-<%= link_to 'Show', @plan %> |
-<%= link_to 'Back', plans_path %>
+	<%= link_to 'Ver', @plan, class: "btn btn-default" %>
+	<% if @plan.servicio.id == 8 %>
+			<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(8).id}, class: "btn btn-danger"%>
+		<% elsif @plan.servicio.id == 6 %>
+				<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(6).id}, class: "btn btn-danger"%>
+			<% elsif @plan.servicio.id == 7 %>
+					<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(7).id}, class: "btn btn-danger"%>
+				<% elsif @plan.servicio.id == 1 %>
+						<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(1).id}, class: "btn btn-danger"%>
+	<% end %>
+</div>
+

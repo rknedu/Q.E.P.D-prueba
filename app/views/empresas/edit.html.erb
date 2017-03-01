@@ -1,6 +1,11 @@
-<h1>Editing Empresa</h1>
+<div class="container">
+	<h1>Editando Empresa</h1>
 
-<%= render 'form', empresa: @empresa %>
+	<%= render 'form', empresa: @empresa %>
 
-<%= link_to 'Show', @empresa %> |
-<%= link_to 'Back', empresas_path %>
+	<%= link_to 'Ver', @empresa, class: "btn btn-default" %>
+	<%= link_to 'Atrás', empresas_path, class: "btn btn-danger" %>
+
+</div>
+
+

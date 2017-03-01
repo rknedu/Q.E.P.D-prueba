@@ -16,6 +16,11 @@
     <%= f.text_field :nombre, class:"form-control" %>  
   </div>
 
+  <div class="form-group">
+    <%= f.label :tipo_empresa_id, "Tipo Empresa:" %>
+    <%= f.collection_select :tipo_empresa_id, TipoEmpresa.all, :id, :nombre, {prompt: true}, {class: "form-control"}  %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Crear Servicio", class:"btn btn-success" %>
   </div>

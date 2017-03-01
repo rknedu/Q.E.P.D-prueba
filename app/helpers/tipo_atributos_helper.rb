@@ -1,0 +1,2 @@
+module TipoAtributosHelper
+end

@@ -1,14 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Cobro mantencion:</strong>
-  <%= @support.cobro_mantencion %>
-</p>
+	<p>
+	  <strong>Cobro mantencion:</strong>
+	  <%= @support.cobro_mantencion %>
+	</p>
 
-<p>
-  <strong>Tiempo cobro:</strong>
-  <%= @support.tiempo_cobro %>
-</p>
+	<p>
+	  <strong>Tiempo cobro:</strong>
+	  <%= @support.tiempo_cobro %>
+	</p>
 
-<%= link_to 'Edit', edit_support_path(@support) %> |
-<%= link_to 'Back', supports_path %>
+	<br>
+
+	<p>
+		<strong>Seleccione otro componente que desea agregar al plan:</strong>
+	</p>
+
+
+	<div class="form-group">
+		<%= link_to "Capacidad", {controller: "espacios", action: "new"}, class: "btn btn-primary"%>
+		<%= link_to "Construcción", {controller: "constructions", action: "new"}, class: "btn btn-success"%>
+		<%= link_to "Ubicación", {controller: "locations", action: "new"}, class: "btn btn-warning"%>
+	</div>
+
+
+	<br>
+				      
+
+	<%= link_to 'Editar', edit_support_path(@support), class: "btn btn-default" %>
+	<%= link_to 'Atrás', supports_path, class: "btn btn-danger" %>
+</div>
+

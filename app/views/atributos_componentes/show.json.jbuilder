@@ -1,0 +1,1 @@
+json.partial! "atributos_componentes/atributos_componente", atributos_componente: @atributos_componente

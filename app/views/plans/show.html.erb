@@ -1,24 +1,58 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @plan.nombre %>
-</p>
+	<strong>Nombre Funeraria:</strong>
+	  <%= @plan.empresa.nombre %>
+	</p>
 
-<p>
-  <strong>Codigo:</strong>
-  <%= @plan.codigo %>
-</p>
+	<p>
+	  <strong>Nombre del Plan:</strong>
+	  <%= @plan.nombre %>
+	</p>
 
-<p>
-  <strong>Precio:</strong>
-  <%= @plan.precio %>
-</p>
+	<strong>Tipo de Plan:</strong>
+	  <%= @plan.type_plan.nombre %>
+	</p>
 
-<strong>Servicio:</strong>
-  <%= @plan.servicio %>
-</p>
+	<strong>Tipo de Cliente:</strong>
+	  <%= @plan.tipo_cliente.nombre %>
+	</p>
+
+	<p>
+	  <strong>Codigo:</strong>
+	  <%= @plan.codigo %>
+	</p>
+
+	<strong>Servicio:</strong>
+	  <%= @plan.servicio.nombre %>
+	</p>
 
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+	<p>
+	  <strong>Precio:</strong>
+	  <%= @plan.precio %>
+	</p>
+
+	<p>
+	
+
+
+	<br>
+			
+	<% if usuario_signed_in? %>
+	  <% if Usuario.last.role_id == 2 %>
+	    <%= link_to 'Editar', edit_plan_path(@plan), class: "btn btn-default" %>
+	  <% end %>
+	<% end %>
+	
+	<% if @plan.servicio.id == 8 %>
+			<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(8).id}, class: "btn btn-danger"%>
+		<% elsif @plan.servicio.id == 6 %>
+				<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(6).id}, class: "btn btn-danger"%>
+			<% elsif @plan.servicio.id == 7 %>
+					<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(7).id}, class: "btn btn-danger"%>
+				<% elsif @plan.servicio.id == 1 %>
+						<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(1).id}, class: "btn btn-danger"%>
+	<% end %>
+
+</div>

@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @region.nombre %>
-</p>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @region.nombre %>
+	</p>
 
-<%= link_to 'Edit', edit_region_path(@region) %> |
-<%= link_to 'Back', regions_path %>
+	<%= link_to 'Editar', edit_region_path(@region), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', regions_path, class: "btn btn-danger" %>
+</div>
+

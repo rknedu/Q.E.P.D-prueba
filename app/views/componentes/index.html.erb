@@ -1,0 +1,47 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Componentes</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Servicio</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+
+    <tbody>
+      <% @componentes.each do |componente| %>
+        <tr>
+          <td><%= componente.nombre %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><%= componente.servicio.nombre %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <% if usuario_signed_in? %>
+              <% if Usuario.last.role_id == 2 %>
+                <td><%= link_to 'Ver', componente, class: "btn btn-primary" %></td>
+                <td><%= link_to 'Editar', edit_componente_path(componente), class: "btn btn-success" %></td>
+                <td><%= link_to 'Eliminar', componente, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %></td>
+              <% end %>
+          <% else %>
+            <td><%= link_to 'Ver', componente, class: "btn btn-primary" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <% if usuario_signed_in? %>
+    <% if Usuario.last.role_id == 2 %>
+      <%= link_to 'Nuevo Componente', new_componente_path, class: "btn btn-info" %>
+    <% end %>
+  <% end %>
+
+</div>

@@ -18,7 +18,7 @@
 
   <div class="form-group">
       <%= f.label :region_id, "Región Id:" %>
-      <%= collection_select :comuna, :region_id, Region.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+      <%= f.collection_select :region_id, Region.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
   </div>
 
 

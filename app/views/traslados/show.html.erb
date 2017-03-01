@@ -1,29 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Carroza de instalacion:</strong>
-  <%= @traslado.carroza_de_instalacion %>
-</p>
+  <p>
+    <strong>Carroza de instalacion:</strong>
+    <%= @traslado.carroza_de_instalacion %>
+  </p>
 
-<p>
-  <strong>Carroza funeral:</strong>
-  <%= @traslado.carroza_funeral %>
-</p>
+  <p>
+    <strong>Carroza funeral:</strong>
+    <%= @traslado.carroza_funeral %>
+  </p>
 
-<p>
-  <strong>Carroza para flores:</strong>
-  <%= @traslado.carroza_para_flores %>
-</p>
+  <p>
+    <strong>Carroza para flores:</strong>
+    <%= @traslado.carroza_para_flores %>
+  </p>
 
-<p>
-  <strong>Vehiculo acompanamiento:</strong>
-  <%= @traslado.vehiculo_acompanamiento %>
-</p>
+  <p>
+    <strong>Vehiculo acompanamiento:</strong>
+    <%= @traslado.vehiculo_acompanamiento %>
+  </p>
 
-<p>
-  <strong>Capacidad pasajeros:</strong>
-  <%= @traslado.capacidad_pasajeros %>
-</p>
+  <p>
+    <strong>Capacidad pasajeros:</strong>
+    <%= @traslado.capacidad_pasajeros %>
+  </p>
 
-<%= link_to 'Edit', edit_traslado_path(@traslado) %> |
-<%= link_to 'Back', traslados_path %>
+  <br>
+
+  <p>
+    <strong>Seleccione otro componente que desea agregar al plan:</strong>
+  </p>
+
+
+  <div class="form-group">
+    <%= link_to "Urna", {controller: "urnas", action: "new"}, class: "btn btn-primary"%>
+    <%= link_to "Velatorio", {controller: "velatorios", action: "new"}, class: "btn btn-success"%>
+  </div>
+
+
+  <br>
+
+  <%= link_to 'Editar', edit_traslado_path(@traslado), class: "btn btn-default" %>
+  <%= link_to 'Atrás', traslados_path, class: "btn btn-danger" %>
+
+</div>
+

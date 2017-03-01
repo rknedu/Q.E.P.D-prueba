@@ -18,21 +18,63 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-          <li style="list-style:none;" >
-            <%= link_to "Publicar", controller: "plans", action: "new"%>
-          </li>
+          
         <% if usuario_signed_in? %>
-          <li>
-            <%= link_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete %>
-          </li>
-        <% else %>  
+
+
+          <% if Usuario.last.role_id == 2 %>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicar<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Empresas", controller: "/empresas", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Sedes", controller: "/sedes", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Telefonos", controller: "/telefonos", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Servicios", controller: "/servicios", action: "new"%>
+                    </li>
+                     <li style="list-style:none;" >
+                      <%= link_to "Publicar Plan", controller: "/plans", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Componentes", controller: "/componentes", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Atributos", controller: "/atributos", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Imagenes", controller: "/images", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Atributos Componentes", controller: "/atributos_componentes", action: "new"%>
+                    </li>
+                    <li style="list-style:none;" >
+                      <%= link_to "Publicar Componentes Planes", controller: "/componentes_plans", action: "new"%>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+              <%= link_to "Registrar Usuario", new_usuario_registration_path%>
+            </li>
+
+            <li>
+              <%= link_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete %>
+            </li>
+
+          <% end %>
+        <% else %> 
+
           <li>
             <%= link_to "Iniciar sesión", new_usuario_session_path%>
           </li>
-        
-          <li>
-            <%= link_to "Registrar Usuario", new_usuario_registration_path%>
-          </li>
+
         <% end %>
         <li><a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a></li>
         <li>

@@ -1,6 +1,9 @@
-<h1>Editing Tipo Cliente</h1>
+<div class="container">
+	<h1>Editando Tipo Cliente</h1>
 
-<%= render 'form', tipo_cliente: @tipo_cliente %>
+	<%= render 'form', tipo_cliente: @tipo_cliente %>
 
-<%= link_to 'Show', @tipo_cliente %> |
-<%= link_to 'Back', tipo_clientes_path %>
+	<%= link_to 'Ver', @tipo_cliente, class: "btn btn-default" %>
+	<%= link_to 'Atrás', tipo_clientes_path, class: "btn btn-danger" %>
+</div>
+

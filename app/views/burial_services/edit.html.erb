@@ -1,6 +1,9 @@
-<h1>Editing Burial Service</h1>
+<div class="container">
+	<h1>Editando Servicio de Sepultación</h1>
 
-<%= render 'form', burial_service: @burial_service %>
+	<%= render 'form', burial_service: @burial_service %>
 
-<%= link_to 'Show', @burial_service %> |
-<%= link_to 'Back', burial_services_path %>
+	<%= link_to 'Ver', @burial_service, class: "btn btn-default" %>
+	<%= link_to 'Atrás', burial_services_path, class: "btn btn-danger" %>
+</div>
+

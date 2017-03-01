@@ -1,0 +1,12 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @tipo_atributo.nombre %>
+	</p>
+
+	<%= link_to 'Editar', edit_tipo_atributo_path(@tipo_atributo), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', tipo_atributos_path, class: "btn btn-danger" %>
+</div>
+

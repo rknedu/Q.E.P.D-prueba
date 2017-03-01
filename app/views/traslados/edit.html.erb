@@ -1,6 +1,9 @@
-<h1>Editing Traslado</h1>
+<div class="container">
+	<h1>Editando Traslado</h1>
 
-<%= render 'form', traslado: @traslado %>
+	<%= render 'form', traslado: @traslado %>
 
-<%= link_to 'Show', @traslado %> |
-<%= link_to 'Back', traslados_path %>
+	<%= link_to 'Ver', @traslado, class: "btn btn-default" %>
+	<%= link_to 'Atrás', traslados_path, class: "btn btn-danger" %>
+</div>
+

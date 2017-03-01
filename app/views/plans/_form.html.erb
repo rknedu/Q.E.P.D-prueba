@@ -11,30 +11,36 @@
     </div>
   <% end %>
 
-  <form role="form"> 
+  <form role="form">
+
+    <div class="form-group">
+      <%= f.label :nombre, "Nombre de Plan:" %>
+      <%= f.text_field :nombre, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :codigo, "Codigo:" %>
+      <%= f.select :codigo, options_for_select(0..1000), { prompt: "No Limit" } %>
+      <%= f.number_field :codigo, class:"form-control", placeholder:"Pendiente" %>
+    </div>
+
     <div class="form-group">
     <label>Nombre Funeraria:</label>
-    <%= collection_select :plan, :empresa_id, Empresa.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+    <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
     </div>
     <div class="form-group">
     <label>Tipo de Plan:</label>
-    <%= collection_select :plan, :type_plan_id, TypePlan.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+    <%= f.collection_select :type_plan_id, TypePlan.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
     </div>
     <div class="form-group">
     <label>Tipo de Cliente:</label>
-    <%= collection_select :plan, :tipo_cliente_id, TipoCliente.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+    <%= f.collection_select :tipo_cliente_id, TipoCliente.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
     </div>
 
     <div class="form-group">
     <label>Servicio:</label>
-    <%= collection_select :plan, :servicio_id, Servicio.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+    <%= f.collection_select :servicio_id, Servicio.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
     </div>
-
-    <div class="form-group">
-    <%= f.label :nombre, "Nombre de Plan:" %>
-    <%= f.text_field :nombre, class:"form-control" %>
-    </div>
-
 
     <div class="form-group">
       <%= f.label :precio, "Precio:" %>

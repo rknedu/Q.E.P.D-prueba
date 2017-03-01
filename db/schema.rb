@@ -10,13 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209131342) do
+ActiveRecord::Schema.define(version: 20170222222843) do
 
   create_table "anforas", force: :cascade do |t|
     t.string   "anfora_y_cobre"
     t.string   "anfora_cobre"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "atributos", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "tipo_atributo_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["tipo_atributo_id"], name: "index_atributos_on_tipo_atributo_id"
+  end
+
+  create_table "atributos_componentes", force: :cascade do |t|
+    t.integer  "componente_id"
+    t.integer  "atributo_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["atributo_id"], name: "index_atributos_componentes_on_atributo_id"
+    t.index ["componente_id"], name: "index_atributos_componentes_on_componente_id"
   end
 
   create_table "burial_services", force: :cascade do |t|
@@ -31,6 +48,23 @@ ActiveRecord::Schema.define(version: 20170209131342) do
     t.string   "cafeteria"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "componentes", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "servicio_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["servicio_id"], name: "index_componentes_on_servicio_id"
+  end
+
+  create_table "componentes_plans", force: :cascade do |t|
+    t.integer  "componente_id"
+    t.integer  "plan_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["componente_id"], name: "index_componentes_plans_on_componente_id"
+    t.index ["plan_id"], name: "index_componentes_plans_on_plan_id"
   end
 
   create_table "components", force: :cascade do |t|
@@ -69,20 +103,19 @@ ActiveRecord::Schema.define(version: 20170209131342) do
   end
 
   create_table "conditions", force: :cascade do |t|
-    t.integer  "formas_de_pago_id"
     t.boolean  "pago_a_plazo"
     t.boolean  "compra_anticipada"
-    t.string   "titulo_de_dominio"
+    t.boolean  "titulo_de_dominio"
     t.boolean  "acepta_seguro_deceso"
-    t.string   "seguro_de_degravamen"
-    t.string   "seguro_cesantia"
+    t.boolean  "seguro_de_degravamen"
+    t.boolean  "seguro_cesantia"
     t.string   "convenio"
-    t.string   "descuento_servicio_sepultacion"
+    t.boolean  "descuento_servicio_sepultacion"
     t.boolean  "pensiones"
     t.integer  "plan_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-    t.index ["formas_de_pago_id"], name: "index_conditions_on_formas_de_pago_id"
+    t.string   "formas_de_pago"
     t.index ["plan_id"], name: "index_conditions_on_plan_id"
   end
 
@@ -90,7 +123,7 @@ ActiveRecord::Schema.define(version: 20170209131342) do
     t.string   "tipo"
     t.string   "material"
     t.string   "terminacion"
-    t.string   "incluye_grabado"
+    t.boolean  "incluye_grabado"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -109,13 +142,14 @@ ActiveRecord::Schema.define(version: 20170209131342) do
 
   create_table "empresas", force: :cascade do |t|
     t.string   "nombre"
-    t.string   "ubicacion"
     t.string   "email"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "user_id"
     t.integer  "tipo_empresa_id"
-    t.index ["user_id"], name: "index_empresas_on_user_id"
+    t.string   "rut"
+    t.integer  "usuario_id"
+    t.index ["tipo_empresa_id"], name: "index_empresas_on_tipo_empresa_id"
+    t.index ["usuario_id"], name: "index_empresas_on_usuario_id"
   end
 
   create_table "espacios", force: :cascade do |t|
@@ -127,10 +161,19 @@ ActiveRecord::Schema.define(version: 20170209131342) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "formas_de_pagos", force: :cascade do |t|
+  create_table "images", force: :cascade do |t|
+    t.string   "titulo"
     t.string   "nombre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "componente_id"
+    t.integer  "plan_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+    t.index ["componente_id"], name: "index_images_on_componente_id"
+    t.index ["plan_id"], name: "index_images_on_plan_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -174,6 +217,20 @@ ActiveRecord::Schema.define(version: 20170209131342) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sedes", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "empresa_id"
+    t.string   "calle"
+    t.integer  "numero"
+    t.string   "sector"
+    t.string   "ubicacion"
+    t.integer  "comuna_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comuna_id"], name: "index_sedes_on_comuna_id"
+    t.index ["empresa_id"], name: "index_sedes_on_empresa_id"
+  end
+
   create_table "servicio_de_cinerarios", force: :cascade do |t|
     t.boolean  "capilla"
     t.boolean  "sala_de_velatorio"
@@ -191,10 +248,10 @@ ActiveRecord::Schema.define(version: 20170209131342) do
 
   create_table "servicios", force: :cascade do |t|
     t.string   "nombre"
-    t.integer  "componente_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["componente_id"], name: "index_servicios_on_componente_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "tipo_empresa_id"
+    t.index ["tipo_empresa_id"], name: "index_servicios_on_tipo_empresa_id"
   end
 
   create_table "supports", force: :cascade do |t|
@@ -206,10 +263,16 @@ ActiveRecord::Schema.define(version: 20170209131342) do
 
   create_table "telefonos", force: :cascade do |t|
     t.integer  "numero"
-    t.integer  "empresa_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["empresa_id"], name: "index_telefonos_on_empresa_id"
+    t.integer  "sede_id"
+    t.index ["sede_id"], name: "index_telefonos_on_sede_id"
+  end
+
+  create_table "tipo_atributos", force: :cascade do |t|
+    t.string   "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tipo_clientes", force: :cascade do |t|
@@ -262,15 +325,16 @@ ActiveRecord::Schema.define(version: 20170209131342) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.string   "pernission_level"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "apellido"
     t.integer  "role_id"
+    t.integer  "permission_level",       default: 1
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_usuarios_on_role_id"
   end
+  
 
   create_table "velatorios", force: :cascade do |t|
     t.string   "tramites_defuncion"

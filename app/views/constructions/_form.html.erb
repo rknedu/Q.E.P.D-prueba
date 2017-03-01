@@ -1,4 +1,4 @@
-<%= form_for(contruction) do |f| %>
+<%= form_for(construction) do |f| %>
 <% if construction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(construction.errors.count, "error") %> prohibited this construction from being saved:</h2>
@@ -26,8 +26,9 @@
          <%= f.text_field :terminacion, class:"form-control" %>
       </div>
       <div class="form-group">
-         <%= f.label :incluye_grabado, "Incluye Grabado:" %>
-         <%= f.text_field :acepta_seguro_deceso, class:"form-control" %>
+          <%= f.check_box :incluye_grabado, :checked => false %>
+          <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+          <%= f.label :incluye_grabado, 'Incluye Grabado' %>
       </div>
       <div class="actions">
       <%= f.submit "Crear Construcción", :class => "btn btn-success" %>

@@ -1,6 +1,9 @@
-<h1>Editing Support</h1>
+<div class="container">
+	<h1>Editando Mantención</h1>
 
-<%= render 'form', support: @support %>
+	<%= render 'form', support: @support %>
 
-<%= link_to 'Show', @support %> |
-<%= link_to 'Back', supports_path %>
+	<%= link_to 'Ver', @support, class: "btn btn-default" %>
+	<%= link_to 'Atrás', supports_path, class: "btn btn-danger" %>
+</div>
+

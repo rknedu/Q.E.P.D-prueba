@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @tipo_cliente.nombre %>
-</p>
+	<p>
+	  <strong>Nombre:</strong>
+	  <%= @tipo_cliente.nombre %>
+	</p>
 
-<%= link_to 'Edit', edit_tipo_cliente_path(@tipo_cliente) %> |
-<%= link_to 'Back', tipo_clientes_path %>
+	<%= link_to 'Editar', edit_tipo_cliente_path(@tipo_cliente), class: "btn btn-default" %> |
+	<%= link_to 'Atrás', tipo_clientes_path, class: "btn btn-danger" %>
+</div>
+

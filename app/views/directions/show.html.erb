@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Calle:</strong>
-  <%= @direction.calle %>
-</p>
+  <p>
+    <strong>Calle:</strong>
+    <%= @direction.calle %>
+  </p>
 
-<p>
-  <strong>Numero:</strong>
-  <%= @direction.numero %>
-</p>
+  <p>
+    <strong>Numero:</strong>
+    <%= @direction.numero %>
+  </p>
 
-<p>
-  <strong>Sector:</strong>
-  <%= @direction.sector %>
-</p>
+  <p>
+    <strong>Sector:</strong>
+    <%= @direction.sector %>
+  </p>
 
-<p>
-  <strong>Empresa:</strong>
-  <%= @direction.empresa %>
-</p>
+  <p>
+    <strong>Empresa:</strong>
+    <%= @direction.empresa %>
+  </p>
 
-<p>
-  <strong>Comuna:</strong>
-  <%= @direction.comuna %>
-</p>
+  <p>
+    <strong>Comuna:</strong>
+    <%= @direction.comuna %>
+  </p>
 
-<%= link_to 'Edit', edit_direction_path(@direction) %> |
-<%= link_to 'Back', directions_path %>
+  <%= link_to 'Editar', edit_direction_path(@direction), class: "btn btn-default" %> |
+  <%= link_to 'Atrás', directions_path, class: "btn btn-danger" %>
+
+</div>

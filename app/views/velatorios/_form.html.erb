@@ -19,41 +19,41 @@
         <%= f.text_field :tramites_defuncion, class:"form-control" %>
       </div>
       <div class="form-group">
-        <%= f.radio_button :asesor_a_domicilio, :checked => false %> 
+        <%= f.check_box :asesor_a_domicilio, :checked => false %> 
         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
         <%= label :asesor_a_domicilio, 'Asesor a Domicilio' %> 
       </div>
       <div class="form-group">
-        <%= f.radio_button :sala_de_velatorio, :checked => false %>
+        <%= f.check_box :sala_de_velatorio, :checked => false %>
         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
         <%= label :sala_de_velatorio, 'Sala de Velatorio' %>
       </div>
       <div class="form-group">
         <%= f.label :cirios, "Cirios:" %>
-        <%= f.text_field :cirios, class:"form-control" %>
+        <%= f.number_field :cirios, class:"form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :portacirios, "Portacirios:" %>
-        <%= f.text_field :portacirios, class:"form-control" %>
+        <%= f.number_field :portacirios, class:"form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :cruz, "Cruz:" %>
-        <%= f.text_field :cruz, class:"form-control" %>
+        <%= f.number_field :cruz, class:"form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :flores_en_canasto, "Flores en Canasto:" %>
-        <%= f.text_field :flores_en_canasto, class:"form-control" %>
+        <%= f.number_field :flores_en_canasto, class:"form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :flores_cubre_urna, "Flores cubre Urna:" %>
-        <%= f.text_field :flores_cubre_urna, class:"form-control" %>
+        <%= f.number_field :flores_cubre_urna, class:"form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :libro_de_condolencias, "Libro de Condolencias:" %>
-        <%= f.text_field :libro_de_condolencias, class:"form-control" %>
+        <%= f.number_field :libro_de_condolencias, class:"form-control" %>
       </div>
       <div class="form-group">
-        <%= f.radio_button :parroco, :checked => false %>
+        <%= f.check_box :parroco, :checked => false %>
         <a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
         <%= label :parroco, 'Parroco' %>
       </div>
@@ -63,11 +63,11 @@
       </div>
       <div class="form-group">
         <%= f.label :aviso_prensa, "Aviso de Prensa:" %>
-        <%= f.text_field :aviso_prensa, class:"form-control" %>
+        <%= f.number_field :aviso_prensa, class:"form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :tarjeta_agradecimiento, "Tarjeta de Agradecimiento:" %>
-        <%= f.text_field :tarjeta_agradecimiento, class:"form-control" %>
+        <%= f.number_field :tarjeta_agradecimiento, class:"form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :cafeteria, "Cafeteria:" %>

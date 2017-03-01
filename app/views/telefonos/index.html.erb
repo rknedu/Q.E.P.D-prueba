@@ -1,29 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Telefonos</h1>
+  <h1>Telefonos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Numero</th>
-      <th>Empresa</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @telefonos.each do |telefono| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= telefono.numero %></td>
-        <td><%= telefono.empresa %></td>
-        <td><%= link_to 'Show', telefono %></td>
-        <td><%= link_to 'Edit', edit_telefono_path(telefono) %></td>
-        <td><%= link_to 'Destroy', telefono, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Numero</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Empresa</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th colspan="3"></th>
       </tr>
+    </thead>
+    
+
+    <tbody>
+      <% @telefonos.each do |telefono| %>
+        <tr>
+          <td><%= telefono.numero %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><%= telefono.sede.nombre %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <% if usuario_signed_in? %>
+              <% if Usuario.last.role_id == 2 %>
+                <td><%= link_to 'Ver', telefono, class: "btn btn-primary" %></td>
+                <td><%= link_to 'Editar', edit_telefono_path(telefono), class: "btn btn-success" %></td>
+                <td><%= link_to 'Eliminar', telefono, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %></td>
+              <% end %>
+          <% else %>
+            <td><%= link_to 'Ver', telefono, class: "btn btn-primary" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <% if usuario_signed_in? %>
+    <% if Usuario.last.role_id == 2 %>
+      <%= link_to 'Nuevo Telefono', new_telefono_path, class: "btn btn-info" %>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+</div>
 
-<br>
-
-<%= link_to 'New Telefono', new_telefono_path %>

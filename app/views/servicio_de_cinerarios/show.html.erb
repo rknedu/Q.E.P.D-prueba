@@ -1,54 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Capilla:</strong>
-  <%= @servicio_de_cinerario.capilla %>
-</p>
+  <p>
+    <strong>Capilla:</strong>
+    <%= @servicio_de_cinerario.capilla %>
+  </p>
 
-<p>
-  <strong>Sala de velatorio:</strong>
-  <%= @servicio_de_cinerario.sala_de_velatorio %>
-</p>
+  <p>
+    <strong>Sala de velatorio:</strong>
+    <%= @servicio_de_cinerario.sala_de_velatorio %>
+  </p>
 
-<p>
-  <strong>Podium:</strong>
-  <%= @servicio_de_cinerario.podium %>
-</p>
+  <p>
+    <strong>Podium:</strong>
+    <%= @servicio_de_cinerario.podium %>
+  </p>
 
-<p>
-  <strong>Liturgia:</strong>
-  <%= @servicio_de_cinerario.liturgia %>
-</p>
+  <p>
+    <strong>Liturgia:</strong>
+    <%= @servicio_de_cinerario.liturgia %>
+  </p>
 
-<p>
-  <strong>Amplificacion:</strong>
-  <%= @servicio_de_cinerario.amplificacion %>
-</p>
+  <p>
+    <strong>Amplificacion:</strong>
+    <%= @servicio_de_cinerario.amplificacion %>
+  </p>
 
-<p>
-  <strong>Diacono:</strong>
-  <%= @servicio_de_cinerario.diacono %>
-</p>
+  <p>
+    <strong>Diacono:</strong>
+    <%= @servicio_de_cinerario.diacono %>
+  </p>
 
-<p>
-  <strong>Coro:</strong>
-  <%= @servicio_de_cinerario.coro %>
-</p>
+  <p>
+    <strong>Coro:</strong>
+    <%= @servicio_de_cinerario.coro %>
+  </p>
 
-<p>
-  <strong>Cafeteria:</strong>
-  <%= @servicio_de_cinerario.cafeteria %>
-</p>
+  <p>
+    <strong>Cafeteria:</strong>
+    <%= @servicio_de_cinerario.cafeteria %>
+  </p>
 
-<p>
-  <strong>Ceremonia entre cenizas:</strong>
-  <%= @servicio_de_cinerario.ceremonia_entre_cenizas %>
-</p>
+  <p>
+    <strong>Ceremonia entre cenizas:</strong>
+    <%= @servicio_de_cinerario.ceremonia_entre_cenizas %>
+  </p>
 
-<p>
-  <strong>Anfora incluida:</strong>
-  <%= @servicio_de_cinerario.anfora_incluida %>
-</p>
+  <p>
+    <strong>Anfora incluida:</strong>
+    <%= @servicio_de_cinerario.anfora_incluida %>
+  </p>
 
-<%= link_to 'Edit', edit_servicio_de_cinerario_path(@servicio_de_cinerario) %> |
-<%= link_to 'Back', servicio_de_cinerarios_path %>
+  <br>
+
+  <p>
+    <strong>Seleccione otro componente que desea agregar al plan:</strong>
+  </p>
+
+
+  <div class="form-group">
+    <%= link_to "Anforas", {controller: "anforas", action: "new"}, class: "btn btn-primary"%>
+  </div>
+
+
+  <br>
+        
+
+  <%= link_to 'Editar', edit_servicio_de_cinerario_path(@servicio_de_cinerario), class: "btn btn-default" %>
+  <%= link_to 'Atrás', servicio_de_cinerario_path, class: "btn btn-danger" %>
+</div>
+
+

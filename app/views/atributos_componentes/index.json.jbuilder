@@ -1,0 +1,1 @@
+json.array! @atributos_componentes, partial: 'atributos_componentes/atributos_componente', as: :atributos_componente
