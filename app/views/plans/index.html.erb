@@ -4,58 +4,62 @@
   <h1>Planes</h1>
 
   <table>
-    <thead>
-      <tr>
-        <th>Nombre de Funraria</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>SKU</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Precio</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Empresa</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Servicio</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Type plan</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>Tipo cliente</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
 
     <tbody>
       <% @plans.each do |plan| %>
         <tr>
-          <td><%= plan.nombre %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td><%= plan.codigo %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td><%= plan.precio %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td><%= plan.empresa.nombre %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td><%= plan.servicio.nombre %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td><%= plan.type_plan.nombre %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td><%= plan.tipo_cliente.nombre %></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <% if usuario_signed_in? %>
-              <% if Usuario.last.role_id == 2 %>
-                <td><%= link_to 'Ver', plan, class: "btn btn-primary" %></td>
-                <td><%= link_to 'Editar', edit_plan_path(plan), class: "btn btn-success" %></td>
-                <td><%= link_to 'Eliminar', plan, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %></td>
-              <% end %>
-          <% else %>
-            <td><%= link_to 'Ver', plan, class: "btn btn-primary" %></td>
-          <% end %>
-          
+          <div class="row list-group">
+                <div class="item  col-md-12">
+                    <div class="thumbnail">
+                        <div class="caption">
+                              <div class="group list-group-image pull-left" alt="" />
+                                    <%= image_tag plan.empresa.cover.url(:minimum) %>:
+                              </div>
+                            <div class="container">
+                              <h4 class="group inner list-group-item-heading">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre del Plan:</h4>   
+                              <p class="group inner list-group-item-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= plan.nombre %></p>
+                                <br>      
+                              <h4 class="group inner list-group-item-heading">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empresa:</h4>
+                              <p class="group inner list-group-item-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= plan.empresa.nombre %></p>
+                                <br>
+                              <h4 class="group inner list-group-item-heading">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tipo Plan:</h4>
+                              <p class="group inner list-group-item-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= plan.type_plan.nombre %></p>
+                                <br> 
+                            </div>
+                                                  
+                            <div class="row">
+                            <div class="col-md-12 text-right">
+                                <p class="lead">
+                                $<%= plan.precio %></p>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <% if usuario_signed_in? %>
+                                    <% if Usuario.last.role_id == 2 %>
+                                      <%= link_to 'Ver', plan, class: "btn btn-primary" %>
+                                      <%= link_to 'Editar', edit_plan_path(plan), class: "btn btn-success" %>
+                                      <%= link_to 'Eliminar', plan, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+                                    <% end %>
+                                <% else %>
+                                  <%= link_to 'Ver', plan, class: "btn btn-primary" %>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>    
         </tr>
       <% end %>
     </tbody>
     
   </table>
+
+  
 
   <br>
   <% if usuario_signed_in? %>

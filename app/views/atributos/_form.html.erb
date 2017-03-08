@@ -18,8 +18,8 @@
   
 
   <div class="form-group">
-    <label>Tipo Atributo:</label>
-    <%= f.collection_select :tipo_atributo_id, TipoAtributo.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+    <%= f.label :valor, "Valor:" %>
+    <%= f.text_field :valor, class:"form-control" %>
   </div>
 
   <div class="actions">

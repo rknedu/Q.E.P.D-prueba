@@ -26,9 +26,12 @@
 	  <%= @empresa.tipo_empresa.nombre %>
 	</p>
 
+	<div>
+	  <%= image_tag @empresa.cover.url(:thumb) %>
+	</div>
+
 	<%= link_to 'Editar', edit_empresa_path(@empresa), class: "btn btn-default" %> |
 	<%= link_to 'Atrás', empresas_path, class: "btn btn-danger" %>
 </div>
-
 
 

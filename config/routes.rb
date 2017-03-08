@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :componentes_plans
+  resources :atributos_componentes
+  resources :images
+  resources :atributos
+  resources :tipo_atributos
+  resources :componentes
+  resources :sedes
   resources :conditions
   resources :formas_de_pagos
   resources :components
@@ -27,10 +34,14 @@ Rails.application.routes.draw do
   resources :tipo_empresas
   resources :comunas
   resources :regions
-  devise_for :usuarios
+  resources :empresas
+  devise_for :usuarios, :controllers => { :registrations => 'registrations'}
+  resources :usuario, :controller => "usuario"
+  get '/usuarios/new'
+
 
   root 'welcome#index'
 
-  resources :empresas
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

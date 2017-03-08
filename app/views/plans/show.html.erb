@@ -4,7 +4,16 @@
 	<strong>Nombre Funeraria:</strong>
 	  <%= @plan.empresa.nombre %>
 	</p>
-
+	<p>
+	<% @plan.empresa.sedes.each do |plan_empresas| %>
+        <tr>
+        <strong>Localidad :</strong>
+     	<%= plan_empresas.comuna.nombre %> |
+     	<%= plan_empresas.comuna.region.nombre %>
+          
+        </tr>
+      <% end %>
+    </p>
 	<p>
 	  <strong>Nombre del Plan:</strong>
 	  <%= @plan.nombre %>
@@ -23,10 +32,57 @@
 	  <%= @plan.codigo %>
 	</p>
 
+	<p>
 	<strong>Servicio:</strong>
 	  <%= @plan.servicio.nombre %>
+	  <br>
 	</p>
 
+	<p>
+	  <% @plan.componentes_plans.each do |plan_componente| %>
+        <tr>
+     <div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title"><%= plan_componente.componente.nombre %></h3>
+			<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+		</div>
+		<div class="panel-body">
+          <p>
+			<strong>Atributos:</strong>
+			<br>
+			  <% plan_componente.componente.atributos_componentes.each do |plan_componente_atributos_componentes| %>
+		        <tr>
+		          <td><%= plan_componente_atributos_componentes.atributo.nombre %></td>:
+		          <td><%= plan_componente_atributos_componentes.atributo.valor %></td>
+		          <br>
+		        </tr>
+		      <% end %>
+		  </p>
+		  <p>
+			<strong>Imagen:</strong>
+			<br>
+			  <% plan_componente.componente.images.each do |plan_componente_images| %>
+		        <tr>
+		          <td><%= image_tag plan_componente_images.cover.url(:minimum) %></td>:
+		          <br>
+		        </tr>
+		      <% end %>
+		  </p>
+          <br>
+          <% if usuario_signed_in? %>
+	  		<% if Usuario.last.role_id == 2 %>
+          		<td><%= link_to 'Ver', {controller: "/componentes", action: "show", id: Componente.find(plan_componente.componente).id}, class: "btn btn-primary" %></td>
+	          <% end %>
+		<% end %>
+          <br>
+		</div>
+	</div>
+          
+        </tr>
+      <% end %>
+	</p>
+
+	
 
 	<p>
 	  <strong>Precio:</strong>

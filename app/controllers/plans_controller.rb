@@ -11,11 +11,19 @@ class PlansController < ApplicationController
     else
       @plans = Plan.all
      end
+
   end
 
   # GET /plans/1
   # GET /plans/1.json
   def show
+
+     @id = params[:id]
+    if @id
+      @plans = Plan.where(:servicio_id => @id)
+    else
+      @plans = Plan.all
+     end
   end
 
   # GET /plans/new

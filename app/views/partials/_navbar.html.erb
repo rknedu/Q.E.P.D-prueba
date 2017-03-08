@@ -23,7 +23,41 @@
 
 
           <% if Usuario.last.role_id == 2 %>
-
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicaciones<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li style="list-style:none;" >
+                        <%= link_to "Empresas", controller: "/empresas", action: "index"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Sedes", controller: "/sedes", action: "index"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Telefonos", controller: "/telefonos", action: "index"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Servicios", controller: "/servicios", action: "index"%>
+                      </li>
+                       <li style="list-style:none;" >
+                        <%= link_to "Plan", controller: "/plans", action: "index"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Componentes", controller: "/componentes", action: "index"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Atributos", controller: "/atributos", action: "index"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Imagenes", controller: "/images", action: "index"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Atributos Componentes", controller: "/atributos_componentes", action: "new"%>
+                      </li>
+                      <li style="list-style:none;" >
+                        <%= link_to "Componentes Planes", controller: "/componentes_plans", action: "index"%>
+                      </li>
+                  </ul>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicar<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -57,13 +91,11 @@
                     <li style="list-style:none;" >
                       <%= link_to "Publicar Componentes Planes", controller: "/componentes_plans", action: "new"%>
                     </li>
-                </ul>
-            </li>
-
+                </ul> 
+            </li>      
             <li>
-              <%= link_to "Registrar Usuario", new_usuario_registration_path%>
+              <%= link_to 'Registrar Usuario', new_usuario_path %>
             </li>
-
             <li>
               <%= link_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete %>
             </li>

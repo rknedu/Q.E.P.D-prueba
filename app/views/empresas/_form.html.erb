@@ -36,6 +36,10 @@
       <%= f.collection_select :tipo_empresa_id, TipoEmpresa.all, :id, :nombre, {prompt: true}, {class: "form-control"}  %>
     </div>
 
+    <div class="form-group">
+      Imagen: <%= f.file_field :cover %>
+    </div>
+
     <div class="actions">
       <%= f.submit "Crear Empresa", :class => "btn btn-success" %>
     </div> 

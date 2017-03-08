@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222222843) do
+ActiveRecord::Schema.define(version: 20170302150836) do
 
   create_table "anforas", force: :cascade do |t|
     t.string   "anfora_y_cobre"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20170222222843) do
 
   create_table "atributos", force: :cascade do |t|
     t.string   "nombre"
-    t.integer  "tipo_atributo_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["tipo_atributo_id"], name: "index_atributos_on_tipo_atributo_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "tipo_atributo"
+    t.string   "valor"
   end
 
   create_table "atributos_componentes", force: :cascade do |t|
@@ -143,11 +143,15 @@ ActiveRecord::Schema.define(version: 20170222222843) do
   create_table "empresas", force: :cascade do |t|
     t.string   "nombre"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "tipo_empresa_id"
     t.string   "rut"
     t.integer  "usuario_id"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
     t.index ["tipo_empresa_id"], name: "index_empresas_on_tipo_empresa_id"
     t.index ["usuario_id"], name: "index_empresas_on_usuario_id"
   end
@@ -334,7 +338,6 @@ ActiveRecord::Schema.define(version: 20170222222843) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_usuarios_on_role_id"
   end
-  
 
   create_table "velatorios", force: :cascade do |t|
     t.string   "tramites_defuncion"

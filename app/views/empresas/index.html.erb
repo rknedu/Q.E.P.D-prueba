@@ -33,6 +33,8 @@
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td><%= empresa.tipo_empresa.nombre %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><%= image_tag empresa.cover.url(:minimum) %></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <% if usuario_signed_in? %>
               <% if Usuario.last.role_id == 2 %>
                 <td><%= link_to 'Ver', empresa, class: "btn btn-primary" %></td>
@@ -56,3 +58,4 @@
   <% end %>
 
 </div>
+

@@ -7,9 +7,18 @@ class ComponentesController < ApplicationController
     @componentes = Componente.all
   end
 
+
   # GET /componentes/1
   # GET /componentes/1.json
   def show
+     @id = params[:id]
+    if @id
+      @componentes = Componente.where(:id => @id)
+    else
+      @componentes = Componente.all
+     end
+
+     @p = Plan.find_by_id(params[:id])
   end
 
   # GET /componentes/new

@@ -69,6 +69,6 @@ class AtributosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atributo_params
-      params.require(:atributo).permit(:nombre, :tipo_atributo_id)
+      params.require(:atributo).permit(:nombre, :valor)
     end
 end
