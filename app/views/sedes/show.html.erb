@@ -29,7 +29,7 @@
 
   <p>
     <strong>Ubicacion:</strong>
-    <%= @sede.ubicacion %>
+    <iframe src=" <%= @sede.ubicacion %>" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
   </p>
 
   <p>
@@ -38,6 +38,7 @@
   </p>
 
   <%= link_to 'Editar', edit_sede_path(@sede), class: "btn btn-default" %> |
-  <%= link_to 'Atrás', sedes_path, class: "btn btn-danger" %>
+  <%= link_to 'Atrás', :back, class: "btn btn-danger" %>
+
 </div>
 

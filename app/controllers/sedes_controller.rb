@@ -12,6 +12,7 @@ class SedesController < ApplicationController
   def show
   end
 
+
   # GET /sedes/new
   def new
     @sede = Sede.new

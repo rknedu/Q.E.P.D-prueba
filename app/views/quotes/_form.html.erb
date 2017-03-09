@@ -1,0 +1,52 @@
+<%= form_for(quote) do |f| %>
+  <% if quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% quote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="form-group">
+      <%= f.label :nombre, "Nombre:" %>
+      <%= f.text_field :nombre, class:"form-control" %>
+    </div>
+
+   <div class="form-group">
+      <%= f.label :apellidos, "Apellidos:" %>
+      <%= f.text_field :apellidos, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :rut, "Rut:" %>
+      <%= f.text_field :rut, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Email:" %>
+      <%= f.text_field :email, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :telefonouno, "Telefono (1):" %>
+      <%= f.number_field :telefonouno, class:"form-control" %>
+    </div>
+
+  <div class="form-group">
+      <%= f.label :telefonodos, "Telefono (2):" %>
+      <%= f.number_field :telefonodos, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.hidden_field :plan_id, :value => @id %>
+  </div>
+
+   <div class="actions">
+      <%= f.submit "Enviar Cotización", :class => "btn btn-success" %>
+    </div>
+    
+<% end %>

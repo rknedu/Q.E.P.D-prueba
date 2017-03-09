@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quotes
   resources :componentes_plans
   resources :atributos_componentes
   resources :images

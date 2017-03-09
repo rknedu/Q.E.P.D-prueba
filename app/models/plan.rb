@@ -5,5 +5,6 @@ class Plan < ApplicationRecord
   belongs_to :empresa
   has_many :componentes_plans
   has_many :componentes
+  has_many :quotes
 end
 
