@@ -27,6 +27,15 @@ $("#menu-toggle").click(function (e) {
   });
 })
 
+$(function toggleChevron(e)) {
+  $(e.target)
+    .prev('.panel-heading')
+    .find("i.indicator")
+    .toggleClass('fa-caret-down fa-caret-right');
+}
+  $('#accordion').on('hidden.bs.collapse', toggleChevron);
+  $('#accordion').on('shown.bs.collapse', toggleChevron);
+
 $(document).on('click', '.panel-heading span.clickable', function(e){
     var $this = $(this);
   if(!$this.hasClass('panel-collapsed')) {

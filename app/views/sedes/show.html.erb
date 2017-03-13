@@ -36,8 +36,12 @@
     <strong>Comuna:</strong>
     <%= @sede.comuna.nombre %>
   </p>
-
-  <%= link_to 'Editar', edit_sede_path(@sede), class: "btn btn-default" %> |
+  <% if usuario_signed_in? %>
+    <% if Usuario.last.role_id == 2 %>
+      <%= link_to 'Editar', edit_sede_path(@sede), class: "btn btn-default" %> |
+    <% end %>
+  <% end %>
+  
   <%= link_to 'Atrás', :back, class: "btn btn-danger" %>
 
 </div>

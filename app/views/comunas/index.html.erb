@@ -21,6 +21,7 @@
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td><%= comuna.region.nombre %></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
           <% if usuario_signed_in? %>
               <% if Usuario.last.role_id == 2 %>
                 <td><%= link_to 'Ver', comuna, class: "btn btn-primary" %></td>

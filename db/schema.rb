@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308013334) do
+ActiveRecord::Schema.define(version: 20170309132121) do
 
   create_table "anforas", force: :cascade do |t|
     t.string   "anfora_y_cobre"
@@ -204,6 +204,8 @@ ActiveRecord::Schema.define(version: 20170308013334) do
     t.datetime "updated_at",      null: false
     t.integer  "empresa_id"
     t.integer  "condition_id"
+    t.boolean  "state"            default: false
+    t.boolean  "necesidad"        default: false
     t.index ["servicio_id"], name: "index_plans_on_servicio_id"
     t.index ["tipo_cliente_id"], name: "index_plans_on_tipo_cliente_id"
     t.index ["type_plan_id"], name: "index_plans_on_type_plan_id"
@@ -219,6 +221,7 @@ ActiveRecord::Schema.define(version: 20170308013334) do
     t.integer  "plan_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "mensaje"
     t.index ["plan_id"], name: "index_quotes_on_plan_id"
   end
 

@@ -1,20 +1,174 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
-  <h1>Planes</h1>
+<div class="container col-md-3 pull-left">
+    <div class="row">
+    <div class="col-xs-12">
+      <div id="accordion" class="panel panel-primary behclick-panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Filtros</h3>
+        </div>
+        <div class="panel-body" >
+          <div class="panel-heading " >
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse0">
+                <i class="indicator fa fa-caret-down" aria-hidden="true"></i> Localidad
+              </a>
+            </h4>
+          </div>
+          <div id="collapse0" class="panel-collapse collapse in" >
+            <ul class="list-group">
+
+              <li class="list-group-item">
+                <div class="checkbox">
+                  <form>
+                    <%= select("comuna", "id", Comuna.pluck(:id)) %>
+                    <%= link_to 'Ver', {controller: "/comunas", action: "show", id: 2 }, class: "btn btn-primary" %>
+                  </form>
+                  
+                </div>
+              </li>
+      
+            </ul>
+          </div>
+
+          <div class="panel-heading " >
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse1">
+                <i class="indicator fa fa-caret-down" aria-hidden="true"></i> Necesidad
+              </a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in" >
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    Necesidad Inmediata
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="checkbox" >
+                  <label>
+                    <input type="checkbox" value="">
+                    Compra Anticipada
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-heading" >
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse3"><i class="indicator fa fa-caret-down" aria-hidden="true"></i> Precio</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse in">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    Mayor a Menor
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="checkbox" >
+                  <label>
+                    <input type="checkbox" value="">
+                    Menor a Mayor
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-heading" >
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse3"><i class="indicator fa fa-caret-down" aria-hidden="true"></i> Tipo de Plan</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse in">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    Basico
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="checkbox" >
+                  <label>
+                    <input type="checkbox" value="">
+                    Medio
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="checkbox"  >
+                  <label>
+                    <input type="checkbox" value="">
+                    Superior
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-heading" >
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse2"><i class="indicator fa fa-caret-right" aria-hidden="true"></i> SKU</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    Sku
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container col-md-9 pull-right">
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Planes
+  <% if @q == "8" %>
+      Funerarias
+    <% elsif @q == "6" %>
+        Crematorios
+      <% elsif @q == "7" %>
+          Sepulturas
+        <% elsif @q == "1" %>
+            Servicios de Sepultación
+  <% end %>
+  </h1>
 
   <table>
 
     <tbody>
       <% @plans.each do |plan| %>
         <tr>
-          <div class="row list-group">
-                <div class="item  col-md-12">
+          <% if plan.state == true %>
+        <div class="panel panel-primary">
+          <div class="row">
+                <div class="col-md-12">
                     <div class="thumbnail">
                         <div class="caption">
                               <div class="group list-group-image pull-left" alt="" />
                                     <%= image_tag plan.empresa.cover.url(:minimum) %>:
                               </div>
+
                             <div class="container">
                               <h4 class="group inner list-group-item-heading">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre del Plan:</h4>   
@@ -37,31 +191,75 @@
                               <p class="group inner list-group-item-text">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= plan_empresa_sedes.comuna.nombre %> | <%= plan_empresa_sedes.comuna.region.nombre %></p>
                                 <br>
-                              <% end %>     
+                              <% end %>
+                            
+                              <p class="group inner list-group-item-text">
+                                <% if plan.necesidad == true %></p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Necesidad Inmediata
+                                <% else %>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compra Anticipada
+                                <% end %>
+                                <br> 
+                              <% if usuario_signed_in? %>
+                                <% if Usuario.last.role_id == 2 %>
+                                    <h4 class="group inner list-group-item-heading">
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publicado:</h4>
+                                    <p class="group inner list-group-item-text">
+                                    <% if plan.state == true %></p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publicado
+                                    <% else %>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pendiente
+                                    <% end %>
+                                      <br>
+                                <% end %>
+                              <% end %>   
                             </div>
+                            
+                            
+
                                                   
                             <div class="row">
-                            <div class="col-md-12 text-right">
-                                <p class="lead">
-                                $<%= plan.precio %></p>
+                            <div class="col-xs-3">
+                              <br>
+                              <br>
+                              <br>
+                              <br>
+                              <%= link_to 'Me interesa', {controller: "/quotes", action: "new", id: plan.id}, class: "btn btn-lg btn-success" %>
                             </div>
-                            <div class="col-md-12 text-right">
-                                <% if usuario_signed_in? %>
-                                    <% if Usuario.last.role_id == 2 %>
-                                      <%= link_to 'Ver', plan, class: "btn btn-primary" %>
-                                      <%= link_to 'Editar', edit_plan_path(plan), class: "btn btn-success" %>
-                                      <%= link_to 'Eliminar', plan, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
-                                    <% end %>
-                                <% else %>
-                                  <%= link_to 'Ver', plan, class: "btn btn-primary" %>
-                                <% end %>
-                            </div>
+                            <div class="col-xs-3 pull-right">
+                              <div class="panel panel-success">
+                                  <div class="panel-body text-center">
+                                      <h1>$<%= plan.precio %></h1>
+                                      <div class="col-md-12 text-center">
+                                      <% if usuario_signed_in? %>
+                                          <% if Usuario.last.role_id == 2 %>
+                                            <%= link_to 'Ver Plan', plan, class: "btn btn-primary" %>
+                                            <%= link_to 'Editar', edit_plan_path(plan), class: "btn btn-success" %>
+                                            <%= link_to 'Eliminar', plan, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+                                          <% end %>
+                                      <% else %>
+                                        <%= link_to 'Ver Plan', plan, class: "btn btn-primary" %>
+                                        </div>
+                                      <% end %>  
+                                  </div>
+                              </div>
+                              
+                          </div>
+                           
+                      </div>
+
                         </div>
                     </div>
                 </div>
-          </div>    
+          </div> 
+        </div>
+   
+        <% end %>
         </tr>
-      <% end %>
+      <% end %>  
+      
+
+      
     </tbody>
     
   </table>

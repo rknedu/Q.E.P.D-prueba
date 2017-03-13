@@ -4,6 +4,7 @@ class PlansController < ApplicationController
 
   # GET /plans
   # GET /plans.json
+
   def index
      @q = params[:q]
     if @q
@@ -11,6 +12,7 @@ class PlansController < ApplicationController
     else
       @plans = Plan.all
      end
+
 
   end
 
@@ -86,6 +88,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:nombre, :codigo, :precio, :empresa_id,  :servicio_id, :type_plan_id, :tipo_cliente_id)
+      params.require(:plan).permit(:nombre, :codigo, :precio, :empresa_id,  :servicio_id, :type_plan_id, :tipo_cliente_id, :state, :necesidad)
     end
 end

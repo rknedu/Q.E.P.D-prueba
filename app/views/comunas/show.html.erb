@@ -2,16 +2,122 @@
 	<p id="notice"><%= notice %></p>
 
 	<p>
-	  <strong>Nombre:</strong>
-	  <%= @comuna.nombre %>
-	</p>
+	<% @comuna.sedes.each do |cod| %>
+            <% cod.empresa.plans.each do |cod2| %>
 
-	<p>
-	  <strong>Region:</strong>
-	  <%= @comuna.region %>
-	</p>
+        <% if cod2.state == true %>    
 
-	<%= link_to 'Editar', edit_comuna_path(@comuna), class: "btn btn-default" %> |
-	<%= link_to 'Atrás', comunas_path, class: "btn btn-danger" %>
+        <div class="panel panel-primary">    
+          <div class="row">
+                <div class="col-md-12">
+                    <div class="thumbnail">
+                        <div class="caption">
+                              <div class="group list-group-image pull-left" alt="" />
+                                    <%= image_tag cod.empresa.cover.url(:minimum) %>:
+                              </div>
+
+                            <div class="container">
+                              <h4 class="group inner list-group-item-heading">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre del Plan:</h4>   
+                              <p class="group inner list-group-item-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cod2.nombre %></p>
+                                <br>      
+                              <h4 class="group inner list-group-item-heading">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empresa:</h4>
+                              <p class="group inner list-group-item-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cod.empresa.nombre %></p>
+                                <br>
+                              <h4 class="group inner list-group-item-heading">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tipo Plan:</h4>
+                              <p class="group inner list-group-item-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cod2.type_plan.nombre %></p>
+                                <br>
+                              <% cod.empresa.sedes.each do |plan_empresa_sedes| %>  
+                              <h4 class="group inner list-group-item-heading">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Localidad:</h4>
+                              <p class="group inner list-group-item-text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= cod.nombre %></p>
+                                <br>
+                              <% end %>
+                            
+                              <p class="group inner list-group-item-text">
+                                <%if cod2.necesidad ==true %>
+					              Necesidad Inmediata
+					              <% else %>
+					              Compra Anticipada
+					             <% end %>
+                                <br> 
+                              <% if usuario_signed_in? %>
+				                <% if Usuario.last.role_id == 2 %>
+
+				                  <%if cod2.state ==true %>
+				                  Publicado
+				                  <% else %>
+				                  Pendiente
+				                  <% end %>
+
+				                <% end %>
+				              <% end %>   
+                            </div>
+                            
+                            
+
+                                                  
+                            <div class="row">
+                            <div class="col-xs-3">
+                              <br>
+                              <br>
+                              <br>
+                              <br>
+                              <%= link_to 'Me interesa', {controller: "/quotes", action: "new", id: cod2.id}, class: "btn btn-lg btn-success" %>
+                            </div>
+                            <div class="col-xs-3 pull-right">
+                              <div class="panel panel-success">
+                                  <div class="panel-body text-center">
+                                      <h1>$<%= cod2.precio %></h1>
+                                      <div class="col-md-12 text-center">
+                                      <% if usuario_signed_in? %>
+                                          <% if Usuario.last.role_id == 2 %>
+                                            <%= link_to 'Ver Plan', plan, class: "btn btn-primary" %>
+                                            <%= link_to 'Editar', edit_plan_path(plan), class: "btn btn-success" %>
+                                            <%= link_to 'Eliminar', plan, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+                                          <% end %>
+                                      <% else %>
+                                        <%= link_to 'Ver Plan', plan_path, class: "btn btn-primary" %>
+                                        </div>
+                                      <% end %>  
+                                  </div>
+                              </div>
+                              
+                          </div>
+                           
+                      </div>
+
+                        </div>
+                    </div>
+                </div>
+          </div> 
+        </div>
+
+            <% end %>
+
+        <% end %>
+    <% end %>
+              
+    </p>
+
+
+
+
+    <% if usuario_signed_in? %>
+      <% if Usuario.last.role_id == 2 %>
+
+        <%= link_to 'Editar', edit_comuna_path(@comuna), class: "btn btn-default" %> |
+
+      <% end %>
+    <% end %>
+
+	
+	<%= link_to 'Atrás', :back, class: "btn btn-danger" %>
 
 </div>

@@ -5,6 +5,12 @@ class QuotesController < ApplicationController
   # GET /quotes.json
   def index
     @quotes = Quote.all
+    @id = params[:id]
+    if @id
+      @quotes = Quote.where(:servicio_id => @id)
+    else
+      @quotes = Quote.all
+     end
   end
 
 
@@ -76,6 +82,6 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:nombre, :apellidos, :rut, :email, :telefonouno, :telefonodos, :plan_id)
+      params.require(:quote).permit(:nombre, :apellidos, :rut, :email, :telefonouno, :telefonodos, :plan_id, :mensaje)
     end
 end

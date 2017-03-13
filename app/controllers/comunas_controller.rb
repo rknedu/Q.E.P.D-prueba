@@ -5,6 +5,12 @@ class ComunasController < ApplicationController
   # GET /comunas.json
   def index
     @comunas = Comuna.all
+
+    if (params[:comuna] && Comuna.all.collect(&:nombre).include?(params[:comuna][:nombre]))
+     @plans = Plan.send(params[:comuna][:nombre].downcase)
+    else
+       @plans = Plan.all
+    end
   end
 
   # GET /comunas/1

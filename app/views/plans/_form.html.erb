@@ -46,6 +46,16 @@
       <%= f.number_field :precio, class:"form-control" %>
     </div>
 
+    <div class="form-group">
+      <%= f.check_box :state %>
+      <%= f.label :state, "Listo para Publicar" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.check_box :necesidad %>
+      <%= f.label :necesidad, "Necesidad Inmediata" %>
+    </div>
+
 
     <div class="actions">
       <%= f.submit "Crear Plan", :class => "btn btn-success" %>

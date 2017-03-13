@@ -82,11 +82,29 @@
       <% end %>
 	</p>
 
+	<p>
+	<strong>Necesidad:</strong>
+	  <% if @plan.necesidad == true %>
+	  	Necesidad Inmediata
+	  <% else %>
+	  	Compra Anticipada	
+	  <% end %>
+	  <br>
+	</p>
+
 	
 
 	<p>
 	  <strong>Precio:</strong>
 	  <%= @plan.precio %>
+	</p>
+	<p>
+		<% if usuario_signed_in? %>
+		  <% if Usuario.last.role_id == 2 %>
+		  	<strong>Publicado:</strong>
+		    <%= @plan.state %>
+		  <% end %>
+		<% end %>
 	</p>
 
 	<p>
@@ -101,7 +119,7 @@
 	  <% end %>
 	<% end %>
 	
-	<%= link_to 'Cotizar', {controller: "/quotes", action: "new", id: Plan.find(params[:id])}, class: "btn btn-primary" %>
+	<%= link_to 'Me interesa', {controller: "/quotes", action: "new", id: Plan.find(params[:id])}, class: "btn btn-primary" %>
 
 	<% if @plan.servicio.id == 8 %>
 			<%= link_to "Atrás", {controller: "/plans", action: "index", q: Servicio.find(8).id}, class: "btn btn-danger"%>

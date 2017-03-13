@@ -39,6 +39,11 @@
           <%= @quote.plan.nombre %>
         </p>
 
+        <p>
+          <strong>Mensaje:</strong>
+          <%= @quote.mensaje %>
+        </p>
+
         <%= link_to 'Editar', edit_quote_path(@quote), class: "btn btn-default" %> |
       <% end %>
   <% end %>
@@ -47,15 +52,40 @@
     <%= image_tag "stylish_portfolio/cotizacion.jpg", class: "img-ubicacion" %>
     <%= image_tag "stylish_portfolio/cotizacion-enviada.png", class: "img-ubicacion" %>
   </div>
+  <h1 style="font-style: italic;">Se enviará un correo a su casilla electronica</h1>
   <br>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Llamanos</button>
 
-  <%= link_to "Llamanos",  "#", :onMouseover => "alert('Nuestro Número: +56981237293')", class: "btn btn-warning"%>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Este es nuesto Número</h4>
+        </div>
+        <div class="modal-body">
+          <p>Funerarias y Cemeterios: +56929132914</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
   <% @quote.plan.empresa.sedes.each do |quote_plan| %>
         <tr>
       <%= link_to "Ubicación", {controller: "/sedes", action: "show", id: quote_plan.id} , class: "btn btn-info"%>    
         </tr>
       <% end %>
   <%= link_to 'Atrás', plan_path(@quote.plan.id), class: "btn btn-danger" %>
+  <%= link_to 'Inicio', root_path, class: "btn btn-success" %>
 
   
 </div>
