@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 style="font-style: italic;">Sus datos fueron enviados correctamente</h1>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @contacto.nombre %>
+  </p>
+
+  <p>
+    <strong>Direccion:</strong>
+    <%= @contacto.direccion %>
+  </p>
+
+  <p>
+    <strong>Fono:</strong>
+    <%= @contacto.fono %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @contacto.email %>
+  </p>
+
+  <p>
+    <strong>Nombre de contacto:</strong>
+    <%= @contacto.nombre_de_contacto %>
+  </p>
+
+  <% if usuario_signed_in? %>
+    <% if Usuario.last.role_id == 2 %>
+  <%= link_to 'Edit', edit_contacto_path(@contacto), class: "btn btn-default" %> |
+  <%= link_to 'Back', contactos_path, class: "btn btn-danger" %>
+    <% end %>
+  <% end %>
+
+  <%= link_to 'Inicio', root_path, class: "btn btn-success" %>
+
+  
+
+</div>

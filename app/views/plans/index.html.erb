@@ -20,9 +20,24 @@
 
               <li class="list-group-item">
                 <div class="checkbox">
+                  Comuna:
                   <form>
-                    <%= select("comuna", "id", Comuna.pluck(:id)) %>
-                    <%= link_to 'Ver', {controller: "/comunas", action: "show", id: 2 }, class: "btn btn-primary" %>
+                  <div>
+                    <%= select("comuna", "id", Comuna.pluck(:nombre)) %>
+                  </div>
+                    
+                    
+                    <%= link_to 'Buscar', {controller: "/comunas", action: "show", id: 2 }, class: "btn btn-primary" %>
+                  </form>
+
+                  Región:
+                  <form>
+                  <div>
+                    <%= select("region", "id", Region.pluck(:nombre)) %>
+                  </div>
+                    
+                    
+                    <%= link_to 'Buscar', {controller: "/regions", action: "show", id: 2 }, class: "btn btn-primary" %>
                   </form>
                   
                 </div>
@@ -85,6 +100,31 @@
           </div>
           <div class="panel-heading" >
             <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse3"><i class="indicator fa fa-caret-down" aria-hidden="true"></i> Tipo de Empresa</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse in">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    Funeraria
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="checkbox" >
+                  <label>
+                    <input type="checkbox" value="">
+                    Cementerio
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-heading" >
+            <h4 class="panel-title">
               <a data-toggle="collapse" href="#collapse3"><i class="indicator fa fa-caret-down" aria-hidden="true"></i> Tipo de Plan</a>
             </h4>
           </div>
@@ -107,7 +147,7 @@
                 </div>
               </li>
               <li class="list-group-item">
-                <div class="checkbox"  >
+                <div class="checkbox" >
                   <label>
                     <input type="checkbox" value="">
                     Superior
@@ -118,7 +158,7 @@
           </div>
           <div class="panel-heading" >
             <h4 class="panel-title">
-              <a data-toggle="collapse" href="#collapse2"><i class="indicator fa fa-caret-right" aria-hidden="true"></i> SKU</a>
+              <a data-toggle="collapse" href="#collapse2"><i class="indicator fa fa-caret-right" aria-hidden="true"></i> Codigo del Plan</a>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
@@ -126,8 +166,9 @@
               <li class="list-group-item">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="">
-                    Sku
+                    Codigo:
+                    <input type="text-field" value="">
+                    
                   </label>
                 </div>
               </li>
@@ -229,7 +270,7 @@
                             <div class="col-xs-3 pull-right">
                               <div class="panel panel-success">
                                   <div class="panel-body text-center">
-                                      <h1>$<%= plan.precio %></h1>
+                                      <h1>$<%= number_with_delimiter(plan.precio, delimiter: ".")  %></h1><h4>con IVA Incluido</h4>
                                       <div class="col-md-12 text-center">
                                       <% if usuario_signed_in? %>
                                           <% if Usuario.last.role_id == 2 %>

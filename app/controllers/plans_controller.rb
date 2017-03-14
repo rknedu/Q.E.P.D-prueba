@@ -14,6 +14,8 @@ class PlansController < ApplicationController
      end
 
 
+
+
   end
 
   # GET /plans/1
@@ -68,6 +70,10 @@ class PlansController < ApplicationController
         format.json { render json: @plan.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def select_parent_for(comuna)
+    select(:comuna, :id, Comuna.all.collect{|c| [c.nombre, c.id]} ) # <--- mistake!
   end
 
   # DELETE /plans/1

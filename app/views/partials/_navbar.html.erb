@@ -96,6 +96,9 @@
             <li>
               <%= link_to 'Registrar Usuario', new_usuario_path %>
             </li>
+            <li style="list-style:none;" >
+              <%= link_to "Contactos", controller: "/contactos", action: "index"%>
+            </li>
             <li>
               <%= link_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete %>
             </li>
@@ -106,6 +109,12 @@
           <li>
             <%= link_to "Iniciar sesión", new_usuario_session_path%>
           </li>
+          
+          <li>
+            <%= link_to "Contactanos", new_contacto_path%>
+          </li>
+
+
 
         <% end %>
         <li><a> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a></li>

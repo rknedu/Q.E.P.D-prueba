@@ -20,6 +20,11 @@
         </p>
 
         <p>
+          <strong>Localidad:</strong>
+          <%= @quote.localidad %>
+        </p>
+
+        <p>
           <strong>Email:</strong>
           <%= @quote.email %>
         </p>
@@ -52,7 +57,7 @@
     <%= image_tag "stylish_portfolio/cotizacion.jpg", class: "img-ubicacion" %>
     <%= image_tag "stylish_portfolio/cotizacion-enviada.png", class: "img-ubicacion" %>
   </div>
-  <h1 style="font-style: italic;">Se enviará un correo a su casilla electronica</h1>
+  <h1 style="font-style: italic;">Nos contactaremos a la brevedad y enviaremos copia de su solicitud a su correo</h1>
   <br>
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Llamanos</button>

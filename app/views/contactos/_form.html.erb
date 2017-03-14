@@ -1,0 +1,43 @@
+<%= form_for(contacto) do |f| %>
+  <% if contacto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contacto.errors.count, "error") %> prohibited this contacto from being saved:</h2>
+
+      <ul>
+      <% contacto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+      <%= f.label :nombre, "Nombre Empresa:" %>
+      <%= f.text_field :nombre, class:"form-control" %>  
+    </div>
+
+  <div class="form-group">
+      <%= f.label :direccion, "Localidad:" %>
+      <%= f.text_field :direccion, class:"form-control" %>  
+    </div>
+
+  <div class="form-group">
+      <%= f.label :fono, "Fono de Contacto:" %>
+      <%= f.text_field :fono, class:"form-control" %>  
+    </div>
+
+  <div class="form-group">
+      <%= f.label :email, "Email:" %>
+      <%= f.text_field :email, class:"form-control" %>  
+    </div>
+
+  <div class="form-group">
+      <%= f.label :nombre_de_contacto, "Nombre de Contacto:" %>
+      <%= f.text_field :nombre_de_contacto, class:"form-control" %>  
+    </div>
+
+  <div class="actions">
+      <%= f.submit "Envíar Datos", :class => "btn btn-success" %>
+    </div>
+<% end %>
