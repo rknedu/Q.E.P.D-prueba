@@ -59,6 +59,21 @@
   </div>
   <h1 style="font-style: italic;">Nos contactaremos a la brevedad y enviaremos copia de su solicitud a su correo</h1>
   <br>
+
+  <h2>¿Desea cotizar otro servicio?</h2>
+
+  <%= link_to "Cotizar Funeraria", {controller: "/plans", action: "index", q: Servicio.find(8).id}, class: "btn btn-primary"%>
+  <%= link_to "Cotizar Crematorio", {controller: "/plans", action: "index", q: Servicio.find(6).id}, class: "btn btn-success"%>
+  <%= link_to "Cotizar Sepultura", {controller: "/plans", action: "index", q: Servicio.find(7).id}, class: "btn btn-warning"%>
+  <%= link_to "Cotizar Servicio de Sepultación", {controller: "/plans", action: "index", q: Servicio.find(1).id}, class: "btn btn-info"%>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Llamanos</button>
 
