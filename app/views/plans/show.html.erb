@@ -1,6 +1,11 @@
 <div class="container">
 	<p id="notice"><%= notice %></p>
 
+	<p>
+	  <strong>Precio:</strong>
+	  <%= @plan.precio %>
+	</p>
+
 	<strong>Nombre Funeraria:</strong>
 	  <%= @plan.empresa.nombre %>
 	</p>
@@ -92,12 +97,6 @@
 	  <br>
 	</p>
 
-	
-
-	<p>
-	  <strong>Precio:</strong>
-	  <%= @plan.precio %>
-	</p>
 	<p>
 		<% if usuario_signed_in? %>
 		  <% if Usuario.last.role_id == 2 %>

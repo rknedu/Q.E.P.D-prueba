@@ -18,9 +18,14 @@
     </div>
 
   <div class="form-group">
-      <%= f.label :direccion, "Localidad:" %>
-      <%= f.text_field :direccion, class:"form-control" %>  
+      <%= f.label :direccion, "Dirección:" %>
+      <%= f.text_field :direccion, class:"form-control", placeholder:"Ej: Av.Nueva Providencia, 592. Providencia" %>  
     </div>
+
+  <div class="form-group">
+      <%= f.label :tipo_empresa_id, "Tipo Empresa:" %>
+      <%= f.collection_select :tipo_empresa_id, TipoEmpresa.all, :id, :nombre, {prompt: true}, {class: "form-control"} %>
+  </div> 
 
   <div class="form-group">
       <%= f.label :fono, "Fono de Contacto:" %>

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 style="font-style: italic;">Sus datos fueron enviados correctamente</h1>
+  <h1 style="font-style: italic;">Sus datos fueron enviados correctamente, nos contactaremos a la brevedad</h1>
 
   <p>
     <strong>Nombre:</strong>
@@ -9,6 +9,11 @@
   <p>
     <strong>Direccion:</strong>
     <%= @contacto.direccion %>
+  </p>
+
+  <p>
+    <strong>Fono:</strong>
+    <%= @contacto.tipo_empresa.nombre %>
   </p>
 
   <p>
